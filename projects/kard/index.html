@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kard</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Estilos personalizados para el drag & drop */
+        .dragging {
+            opacity: 0.5;
+            transform: rotate(5deg);
+        }
+        .drag-over {
+            background-color: #e5e7eb;
+            border: 2px dashed #9ca3af;
+        }
+        .column {
+            min-height: 200px;
+        }
+        .card {
+            transition: all 0.2s ease;
+        }
+        .card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        }
+        .btn-hover:hover {
+            transform: translateY(-1px);
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+<body class="bg-blue-500 min-h-screen">
+    <!-- Cabecera -->
+    <header class="bg-blue-600 text-white p-4 shadow-lg">
+        <div class="container mx-auto">
+            <h1 class="text-2xl font-bold">Kard</h1>
+            <p class="text-blue-100 text-sm mt-1">Organiza tus tareas de forma visual</p>
+        </div>
+    </header>
+
+    <!-- Tablero principal -->
+    <main class="container mx-auto p-6">
+        <div class="flex gap-6 overflow-x-auto pb-6" id="board">
+            <!-- Las columnas se generarán dinámicamente aquí -->
+        </div>
+        
+        <!-- Botón para añadir columna -->
+        <button 
+            id="addColumnBtn" 
+            class="bg-white bg-opacity-20 hover:bg-opacity-30 text-white px-4 py-2 rounded-lg transition-all duration-200 btn-hover min-w-72 h-12 flex items-center justify-center gap-2 border-2 border-dashed border-white border-opacity-50"
+        >
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"></path>
+            </svg>
+            Añadir columna
+        </button>
+    </main>
+
+    <script>
+        // Clase principal para manejar el tablero de Kard
+        class KardApp {
+            constructor() {
+                this.board = document.getElementById('board');
+                this.addColumnBtn = document.getElementById('addColumnBtn');
+                this.data = this.loadData();
+                this.init();
+            }
+
+            // Inicializar la aplicación
+            init() {
+                this.renderBoard();
+                this.addColumnBtn.addEventListener('click', () => this.addColumn());
+                
+                // Eventos para drag & drop
+                this.setupDragAndDrop();
+            }
+
+            // Cargar datos desde localStorage
+            loadData() {
+                const saved = localStorage.getItem('kardAppData');
+                return saved ? JSON.parse(saved) : {
+                    columns: [
+                        {
+                            id: 'col-1',
+                            title: 'Por hacer',
+                            cards: [
+                                { id: 'card-1', text: 'Planificar el proyecto' },
+                                { id: 'card-2', text: 'Diseñar la interfaz' }
+                            ]
+                        },
+                        {
+                            id: 'col-2',
+                            title: 'En progreso',
+                            cards: [
+                                { id: 'card-3', text: 'Desarrollar funcionalidades' }
+                            ]
+                        },
+                        {
+                            id: 'col-3',
+                            title: 'Completado',
+                            cards: [
+                                { id: 'card-4', text: 'Configurar el entorno' }
+                            ]
+                        }
+                    ]
+                };
+            }
+
+            // Guardar datos en localStorage
+            saveData() {
+                localStorage.setItem('kardAppData', JSON.stringify(this.data));
+            }
+
+            // Renderizar todo el tablero
+            renderBoard() {
+                this.board.innerHTML = '';
+                this.data.columns.forEach(column => {
+                    const columnElement = this.createColumnElement(column);
+                    this.board.appendChild(columnElement);
+                });
+            }
+
+            // Crear elemento de columna
+            createColumnElement(column) {
+                const columnDiv = document.createElement('div');
+                columnDiv.className = 'bg-gray-100 rounded-lg p-4 min-w-72 max-w-72 column';
+                columnDiv.dataset.columnId = column.id;
+                
+                columnDiv.innerHTML = `
+                    <div class="flex justify-between items-center mb-4">
+                        <h2 class="font-semibold text-gray-800 flex-1">${column.title}</h2>
+                        <button class="delete-column-btn text-red-500 hover:text-red-700 p-1 rounded hover:bg-red-50 transition-colors">
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"></path>
+                            </svg>
+                        </button>
+                    </div>
+                    <div class="cards-container space-y-2 mb-4 min-h-24" data-column-id="${column.id}">
+                        ${column.cards.map(card => this.createCardHTML(card)).join('')}
+                    </div>
+                    <button class="add-card-btn w-full bg-gray-200 hover:bg-gray-300 text-gray-700 py-2 px-4 rounded-lg transition-colors btn-hover flex items-center justify-center gap-2">
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"></path>
+                        </svg>
+                        Añadir tarjeta
+                    </button>
+                `;
+
+                // Añadir event listeners
+                const deleteBtn = columnDiv.querySelector('.delete-column-btn');
+                deleteBtn.addEventListener('click', () => this.deleteColumn(column.id));
+
+                const addCardBtn = columnDiv.querySelector('.add-card-btn');
+                addCardBtn.addEventListener('click', () => this.addCard(column.id));
+
+                // Event listeners para eliminar tarjetas
+                columnDiv.querySelectorAll('.delete-card-btn').forEach(btn => {
+                    btn.addEventListener('click', (e) => {
+                        const cardId = e.target.closest('.card').dataset.cardId;
+                        this.deleteCard(column.id, cardId);
+                    });
+                });
+
+                return columnDiv;
+            }
+
+            // Crear HTML para una tarjeta
+            createCardHTML(card) {
+                return `
+                    <div class="card bg-white p-3 rounded-lg shadow-sm border cursor-move" 
+                         draggable="true" 
+                         data-card-id="${card.id}">
+                        <div class="flex justify-between items-start gap-2">
+                            <p class="text-gray-800 flex-1">${card.text}</p>
+                            <button class="delete-card-btn text-red-400 hover:text-red-600 opacity-0 group-hover:opacity-100 transition-opacity">
+                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+                `;
+            }
+
+            // Añadir nueva columna
+            addColumn() {
+                const title = prompt('Nombre de la nueva columna:');
+                if (!title || title.trim() === '') return;
+
+                const newColumn = {
+                    id: 'col-' + Date.now(),
+                    title: title.trim(),
+                    cards: []
+                };
+
+                this.data.columns.push(newColumn);
+                this.saveData();
+                this.renderBoard();
+                this.setupDragAndDrop();
+            }
+
+            // Eliminar columna
+            deleteColumn(columnId) {
+                if (confirm('¿Estás seguro de que quieres eliminar esta columna y todas sus tarjetas?')) {
+                    this.data.columns = this.data.columns.filter(col => col.id !== columnId);
+                    this.saveData();
+                    this.renderBoard();
+                    this.setupDragAndDrop();
+                }
+            }
+
+            // Añadir nueva tarjeta
+            addCard(columnId) {
+                const text = prompt('Contenido de la tarjeta:');
+                if (!text || text.trim() === '') return;
+
+                const column = this.data.columns.find(col => col.id === columnId);
+                if (!column) return;
+
+                const newCard = {
+                    id: 'card-' + Date.now(),
+                    text: text.trim()
+                };
+
+                column.cards.push(newCard);
+                this.saveData();
+                this.renderBoard();
+                this.setupDragAndDrop();
+            }
+
+            // Eliminar tarjeta
+            deleteCard(columnId, cardId) {
+                const column = this.data.columns.find(col => col.id === columnId);
+                if (!column) return;
+
+                column.cards = column.cards.filter(card => card.id !== cardId);
+                this.saveData();
+                this.renderBoard();
+                this.setupDragAndDrop();
+            }
+
+            // Configurar drag & drop
+            setupDragAndDrop() {
+                const cards = document.querySelectorAll('.card');
+                const containers = document.querySelectorAll('.cards-container');
+
+                // Eventos para las tarjetas
+                cards.forEach(card => {
+                    card.addEventListener('dragstart', (e) => {
+                        e.dataTransfer.setData('text/plain', card.dataset.cardId);
+                        card.classList.add('dragging');
+                    });
+
+                    card.addEventListener('dragend', () => {
+                        card.classList.remove('dragging');
+                    });
+
+                    // Mostrar botón de eliminar al hacer hover
+                    card.addEventListener('mouseenter', () => {
+                        const deleteBtn = card.querySelector('.delete-card-btn');
+                        if (deleteBtn) {
+                            deleteBtn.style.opacity = '1';
+                        }
+                    });
+
+                    card.addEventListener('mouseleave', () => {
+                        const deleteBtn = card.querySelector('.delete-card-btn');
+                        if (deleteBtn) {
+                            deleteBtn.style.opacity = '0';
+                        }
+                    });
+
+                    // Event listener para el botón de eliminar
+                    const deleteBtn = card.querySelector('.delete-card-btn');
+                    if (deleteBtn) {
+                        deleteBtn.addEventListener('click', (e) => {
+                            e.stopPropagation();
+                            const columnId = card.closest('.cards-container').dataset.columnId;
+                            this.deleteCard(columnId, card.dataset.cardId);
+                        });
+                    }
+                });
+
+                // Eventos para los contenedores
+                containers.forEach(container => {
+                    container.addEventListener('dragover', (e) => {
+                        e.preventDefault();
+                        container.classList.add('drag-over');
+                    });
+
+                    container.addEventListener('dragleave', () => {
+                        container.classList.remove('drag-over');
+                    });
+
+                    container.addEventListener('drop', (e) => {
+                        e.preventDefault();
+                        container.classList.remove('drag-over');
+                        
+                        const cardId = e.dataTransfer.getData('text/plain');
+                        const targetColumnId = container.dataset.columnId;
+                        
+                        this.moveCard(cardId, targetColumnId);
+                    });
+                });
+            }
+
+            // Mover tarjeta entre columnas
+            moveCard(cardId, targetColumnId) {
+                // Encontrar la tarjeta y su columna actual
+                let sourceColumn = null;
+                let card = null;
+
+                for (const column of this.data.columns) {
+                    const foundCard = column.cards.find(c => c.id === cardId);
+                    if (foundCard) {
+                        sourceColumn = column;
+                        card = foundCard;
+                        break;
+                    }
+                }
+
+                if (!sourceColumn || !card) return;
+
+                // Si es la misma columna, no hacer nada
+                if (sourceColumn.id === targetColumnId) return;
+
+                // Remover de la columna original
+                sourceColumn.cards = sourceColumn.cards.filter(c => c.id !== cardId);
+
+                // Añadir a la columna destino
+                const targetColumn = this.data.columns.find(col => col.id === targetColumnId);
+                if (targetColumn) {
+                    targetColumn.cards.push(card);
+                }
+
+                this.saveData();
+                this.renderBoard();
+                this.setupDragAndDrop();
+            }
+        }
+
+        // Inicializar la aplicación cuando se carga la página
+        document.addEventListener('DOMContentLoaded', () => {
+            new KardApp();
+        });
+    </script>
+</body>
+</html>

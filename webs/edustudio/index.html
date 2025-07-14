@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EduStudio - Blog Educativo</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <span>🎓</span>
+            <h1>EduStudio</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#" class="active" onclick="mostrarSeccion('inicio')">🏠 Inicio</a></li>
+                <li><a href="#" onclick="mostrarSeccion('articulos')">📚 Artículos</a></li>
+                <li><a href="#" onclick="mostrarSeccion('recursos')">🛠️ Recursos</a></li>
+                <li><a href="#" onclick="mostrarSeccion('sobre-nosotros')">👥 Sobre Nosotros</a></li>
+                <li><a href="#" onclick="mostrarSeccion('contacto')">📞 Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="contenido-principal">
+        <main>
+            <!-- Sección de Inicio -->
+            <section id="inicio" class="seccion-contenido">
+                <div class="post-it-section">
+                    <h2>¡Bienvenidos a EduStudio! 🌟</h2>
+                    <p>Tu espacio digital para el aprendizaje creativo y la educación innovadora. Aquí encontrarás recursos educativos, métodos de enseñanza modernos y herramientas para transformar la manera en que aprendemos.</p>
+                    <p>🎯 <strong>Nuestra misión:</strong> Hacer que el aprendizaje sea divertido, accesible y efectivo para todos.</p>
+                </div>
+
+                <div class="post-it-section">
+                    <h2>Artículos Recientes 📖</h2>
+                    
+                    <div class="articulo">
+                        <h3>🧠 Técnicas de Memorización Efectivas</h3>
+                        <div class="fecha">📅 10 de Julio, 2025</div>
+                        <p>Descubre métodos científicamente probados para mejorar tu memoria y retención de información. Desde la técnica del palacio mental hasta la repetición espaciada...</p>
+                        <div class="tags">
+                            <span class="tag">Memoria</span>
+                            <span class="tag">Técnicas</span>
+                            <span class="tag">Estudio</span>
+                        </div>
+                    </div>
+
+                    <div class="articulo">
+                        <h3>🎨 Aprendizaje Visual: Mapas Mentales</h3>
+                        <div class="fecha">📅 8 de Julio, 2025</div>
+                        <p>Los mapas mentales son una herramienta poderosa para organizar información y estimular la creatividad. Aprende a crear mapas mentales efectivos...</p>
+                        <div class="tags">
+                            <span class="tag">Visual</span>
+                            <span class="tag">Creatividad</span>
+                            <span class="tag">Organización</span>
+                        </div>
+                    </div>
+
+                    <div class="articulo">
+                        <h3>🤝 Aprendizaje Colaborativo en la Era Digital</h3>
+                        <div class="fecha">📅 5 de Julio, 2025</div>
+                        <p>Explora cómo las herramientas digitales han revolucionado el aprendizaje colaborativo y cómo aprovechar al máximo estas oportunidades...</p>
+                        <div class="tags">
+                            <span class="tag">Colaboración</span>
+                            <span class="tag">Digital</span>
+                            <span class="tag">Trabajo en Equipo</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="post-it-section">
+                    <h2>Galería de Recursos 🖼️</h2>
+                    <div class="galeria">
+                        <div class="galeria-item">
+                            <div style="background: linear-gradient(45deg, #FF6B6B, #4ECDC4); height: 120px; border-radius: 8px; display: flex; align-items: center; justify-content: center; color: white; font-weight: bold;">📊 Infografías</div>
+                        </div>
+                        <div class="galeria-item">
+                            <div style="background: linear-gradient(45deg, #45B7D1, #96CEB4); height: 120px; border-radius: 8px; display: flex; align-items: center; justify-content: center; color: white; font-weight: bold;">🎥 Videos</div>
+                        </div>
+                        <div class="galeria-item">
+                            <div style="background: linear-gradient(45deg, #F7971E, #FFD200); height: 120px; border-radius: 8px; display: flex; align-items: center; justify-content: center; color: white; font-weight: bold;">📱 Apps</div>
+                        </div>
+                        <div class="galeria-item">
+                            <div style="background: linear-gradient(45deg, #667eea, #764ba2); height: 120px; border-radius: 8px; display: flex; align-items: center; justify-content: center; color: white; font-weight: bold;">🧩 Juegos</div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Sección de Artículos -->
+            <section id="articulos" class="seccion-contenido" style="display: none;">
+                <div class="post-it-section">
+                    <h2>Todos los Artículos 📚</h2>
+                    
+                    <div class="articulo">
+                        <h3>🧠 Neurociencia del Aprendizaje</h3>
+                        <div class="fecha">📅 12 de Julio, 2025</div>
+                        <p>Descubre cómo funciona el cerebro durante el proceso de aprendizaje y cómo aplicar estos conocimientos para mejorar tu rendimiento académico.</p>
+                        <div class="tags">
+                            <span class="tag">Neurociencia</span>
+                            <span class="tag">Cerebro</span>
+                            <span class="tag">Aprendizaje</span>
+                        </div>
+                    </div>
+
+                    <div class="articulo">
+                        <h3>🎯 Metodología Pomodoro para Estudiantes</h3>
+                        <div class="fecha">📅 11 de Julio, 2025</div>
+                        <p>Aprende a gestionar tu tiempo de estudio de manera efectiva con la técnica Pomodoro adaptada especialmente para estudiantes.</p>
+                        <div class="tags">
+                            <span class="tag">Tiempo</span>
+                            <span class="tag">Productividad</span>
+                            <span class="tag">Pomodoro</span>
+                        </div>
+                    </div>
+
+                    <div class="articulo">
+                        <h3>🌱 Aprendizaje Basado en Proyectos</h3>
+                        <div class="fecha">📅 9 de Julio, 2025</div>
+                        <p>Explora cómo el aprendizaje basado en proyectos puede transformar la educación tradicional y hacer que el aprendizaje sea más significativo.</p>
+                        <div class="tags">
+                            <span class="tag">Proyectos</span>
+                            <span class="tag">Práctica</span>
+                            <span class="tag">Innovación</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Sección de Recursos -->
+            <section id="recursos" class="seccion-contenido" style="display: none;">
+                <div class="post-it-section">
+                    <h2>Recursos Educativos 🛠️</h2>
+                    
+                    <div class="articulo">
+                        <h3>📝 Plantillas de Estudio</h3>
+                        <p>Descarga plantillas gratuitas para organizar tus apuntes, crear horarios de estudio y planificar tus proyectos académicos.</p>
+                        <div class="tags">
+                            <span class="tag">Plantillas</span>
+                            <span class="tag">Organización</span>
+                            <span class="tag">Gratis</span>
+                        </div>
+                    </div>
+
+                    <div class="articulo">
+                        <h3>🎧 Podcasts Educativos</h3>
+                        <p>Una selección curada de los mejores podcasts sobre educación, ciencia, tecnología y desarrollo personal.</p>
+                        <div class="tags">
+                            <span class="tag">Podcasts</span>
+                            <span class="tag">Audio</span>
+                            <span class="tag">Educación</span>
+                        </div>
+                    </div>
+
+                    <div class="articulo">
+                        <h3>🔬 Herramientas Digitales</h3>
+                        <p>Conoce las mejores aplicaciones y herramientas online para mejorar tu experiencia de aprendizaje y enseñanza.</p>
+                        <div class="tags">
+                            <span class="tag">Herramientas</span>
+                            <span class="tag">Digital</span>
+                            <span class="tag">Tecnología</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Sección Sobre Nosotros -->
+            <section id="sobre-nosotros" class="seccion-contenido" style="display: none;">
+                <div class="post-it-section">
+                    <h2>Sobre Nosotros 👥</h2>
+                    <p>EduStudio nació de la pasión por transformar la educación y hacer que el aprendizaje sea una experiencia emocionante y efectiva para todos.</p>
+                    
+                    <h3>Nuestro Equipo</h3>
+                    <div class="galeria">
+                        <div class="galeria-item">
+                            <div style="background: linear-gradient(45deg, #FF6B6B, #4ECDC4); height: 120px; border-radius: 8px; display: flex; flex-direction: column; align-items: center; justify-content: center; color: white; font-weight: bold;">
+                                <span style="font-size: 30px;">👨‍🏫</span>
+                                <span>Ana García</span>
+                                <small>Pedagoga</small>
+                            </div>
+                        </div>
+                        <div class="galeria-item">
+                            <div style="background: linear-gradient(45deg, #45B7D1, #96CEB4); height: 120px; border-radius: 8px; display: flex; flex-direction: column; align-items: center; justify-content: center; color: white; font-weight: bold;">
+                                <span style="font-size: 30px;">👩‍💻</span>
+                                <span>Carlos López</span>
+                                <small>Desarrollador</small>
+                            </div>
+                        </div>
+                        <div class="galeria-item">
+                            <div style="background: linear-gradient(45deg, #F7971E, #FFD200); height: 120px; border-radius: 8px; display: flex; flex-direction: column; align-items: center; justify-content: center; color: white; font-weight: bold;">
+                                <span style="font-size: 30px;">🎨</span>
+                                <span>María Silva</span>
+                                <small>Diseñadora</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Sección de Contacto -->
+            <section id="contacto" class="seccion-contenido" style="display: none;">
+                <div class="post-it-section">
+                    <h2>Contacto 📞</h2>
+                    <p>¿Tienes alguna pregunta o sugerencia? ¡Nos encantaría saber de ti!</p>
+                    
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-top: 20px;">
+                        <div>
+                            <h3>📧 Email</h3>
+                            <p>info@edustudio.com</p>
+                            
+                            <h3>📱 Teléfono</h3>
+                            <p>+34 123 456 789</p>
+                            
+                            <h3>🏢 Dirección</h3>
+                            <p>Calle Educación, 123<br>28001 Madrid, España</p>
+                        </div>
+                        
+                        <div>
+                            <h3>💬 Envíanos un mensaje</h3>
+                            <form>
+                                <input type="text" placeholder="Tu nombre" required>
+                                <input type="email" placeholder="Tu email" required>
+                                <textarea placeholder="Tu mensaje" rows="4" required></textarea>
+                                <button type="submit">Enviar Mensaje</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <aside>
+            <div class="widget">
+                <h3>🔐 Iniciar Sesión</h3>
+                <form>
+                    <label for="usuario">Usuario:</label>
+                    <input type="text" id="usuario" name="usuario" required>
+
+                    <label for="contrasena">Contraseña:</label>
+                    <input type="password" id="contrasena" name="contrasena" required>
+
+                    <button type="submit" class="bounce-on-hover">Entrar</button>
+                    <p><a href="#">¿Olvidaste tu contraseña?</a></p>
+                </form>
+            </div>
+
+            <div class="widget">
+                <h3>📬 Newsletter</h3>
+                <p>Suscríbete y recibe los mejores recursos educativos directamente en tu email.</p>
+                <form>
+                    <input type="email" placeholder="Tu email" required>
+                    <button type="submit" class="bounce-on-hover">Suscribirse</button>
+                </form>
+            </div>
+
+            <div class="widget categorias">
+                <h3>📂 Categorías</h3>
+                <ul>
+                    <li><a href="#">🧠 Neurociencia (12)</a></li>
+                    <li><a href="#">🎯 Técnicas de Estudio (8)</a></li>
+                    <li><a href="#">🎨 Aprendizaje Visual (6)</a></li>
+                    <li><a href="#">💻 Tecnología Educativa (15)</a></li>
+                    <li><a href="#">🤝 Aprendizaje Colaborativo (4)</a></li>
+                    <li><a href="#">🧩 Gamificación (7)</a></li>
+                </ul>
+            </div>
+
+            <div class="widget">
+                <h3>📊 Estadísticas</h3>
+                <p>📝 <strong>45</strong> artículos publicados</p>
+                <p>👥 <strong>2,347</strong> lectores activos</p>
+                <p>💬 <strong>156</strong> comentarios</p>
+                <p>🌟 <strong>98%</strong> satisfacción</p>
+            </div>
+        </aside>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 EduStudio - Blog Educativo. Todos los derechos reservados.</p>
+        <p>Transformando la educación, una idea a la vez 🚀</p>
+        <div class="redes-sociales">
+            <a href="#" title="Facebook">📘 Facebook</a>
+            <a href="#" title="Twitter">🐦 Twitter</a>
+            <a href="#" title="Instagram">📷 Instagram</a>
+            <a href="#" title="YouTube">📺 YouTube</a>
+            <a href="#" title="LinkedIn">💼 LinkedIn</a>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>

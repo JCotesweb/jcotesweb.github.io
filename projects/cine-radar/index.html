@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CineRadar</title>
+<script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+
+</head>
+<body class="bg-[#0a0a0a] text-white font-sans">
+
+  <header class="text-center py-8 border-b border-[#00FF41]">
+    <h1 class="text-4xl font-bold text-[#00FF41] tracking-wide">CineRadar</h1>
+    <p class="text-gray-400 mt-2">Descubre películas a tu medida</p>
+  </header>
+
+  <main class="max-w-4xl mx-auto px-4 py-8">
+    <section class="mb-8">
+      <h2 class="text-2xl mb-4">🎯 Selecciona tus géneros favoritos:</h2>
+      <form id="genre-form" class="grid grid-cols-2 gap-4 text-lg">
+        <label class="flex items-center space-x-2">
+          <input type="checkbox" name="genre" value="28" class="accent-[#00FF41]">
+          <span>Acción</span>
+        </label>
+        <label class="flex items-center space-x-2">
+          <input type="checkbox" name="genre" value="35" class="accent-[#00FF41]">
+          <span>Comedia</span>
+        </label>
+        <label class="flex items-center space-x-2">
+          <input type="checkbox" name="genre" value="18" class="accent-[#00FF41]">
+          <span>Drama</span>
+        </label>
+        <label class="flex items-center space-x-2">
+          <input type="checkbox" name="genre" value="27" class="accent-[#00FF41]">
+          <span>Terror</span>
+        </label>
+        <label class="flex items-center space-x-2">
+          <input type="checkbox" name="genre" value="10749" class="accent-[#00FF41]">
+          <span>Romance</span>
+        </label>
+        <button type="submit" class="col-span-2 mt-4 bg-[#00FF41] text-black px-6 py-2 tracking-wide hover:bg-[#39FF14]">Obtener Recomendaciones</button>
+      </form>
+    </section>
+
+    <section id="movies" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+      <!-- Aquí se insertarán las películas -->
+    </section>
+  </main>
+
+  <footer class="text-center py-6 border-t border-[#00FF41] text-gray-500">
+    © 2025 CineRadar. Todos los derechos reservados.
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>

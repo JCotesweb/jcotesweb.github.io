@@ -1,0 +1,719 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>José Cotes | Portfolio</title>
+  <meta name="description"
+    content="Portfolio de José Cotes Martínez, desarrollador front-end y diseñador web con experiencia en UI/UX, HTML, CSS, JavaScript y más.">
+
+  <link href="https://fonts.googleapis.com/css2?family=Fira+Code&display=swap" rel="stylesheet">
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+  <div class="container">
+    <aside class="sidebar">
+      <div class="logo">
+        <img class="placeholder-img" src="img/avatar.png" alt="">
+      </div>
+      <nav class="menu">
+        <a href="#home" class="scroll-link">Inicio</a>
+        <a href="#sobre-mi" class="scroll-link">Sobre mí</a>
+        <a href="#portfolio" class="scroll-link">Portfolio</a>
+        <a href="#educacion" class="scroll-link">Educación</a>
+        <a href="#skills" class="scroll-link">Habilidades</a>
+        <a href="#contacto" class="scroll-link">Contacto</a>
+      </nav>
+    </aside>
+
+    <main class="content">
+      <section id="home">
+        <h1><strong>José Cotes Martínez</strong></h1>
+        <h2>Desarrollador front-end y diseñador web.</h2>
+        <p>Si quieres ponerte en contacto conmigo: <a class="link"
+            href="mailto:jcotes.mar@gmail.com">jcotes.mar@gmail.com</a></p>
+        <div class="social">
+          <a href="https://instagram.com/jcot_es" target="_blank" title="Instagram">
+            <img src="img/iconos/redes/instagram.png" alt="Instagram">
+          </a>
+          <a href="https://github.com/JCotesweb" target="_blank" title="GitHub">
+            <img src="img/iconos/redes/github.png" alt="GitHub">
+          </a>
+          <a href="https://www.linkedin.com/in/jose-cotes/" target="_blank" title="LinkedIn">
+            <img src="img/iconos/redes/link.png" alt="LinkedIn">
+          </a>
+        </div>
+        <button class="btn-base" onclick="window.open('cv/Cv Jose Cotes.pdf', '_blank')">Descarga mi CV</button>
+      </section>
+
+      <section id="sobre-mi">
+        <h2>Sobre mí</h2>
+        <p>Soy un desarrollador web con especialización en frontend y diseño web, con una base técnica sólida y más de
+          10 años de experiencia en soporte informático, montaje de equipos y administración de sistemas. Me enfoco en
+          crear interfaces visualmente atractivas, accesibles y funcionales, combinando conocimientos de diseño UI/UX
+          con dominio de tecnologías como HTML, CSS, JavaScript y herramientas modernas. Además, cuento con formación y
+          experiencia en desarrollo backend, bases de datos y ciberseguridad, lo que me permite comprender el desarrollo
+          web de forma integral. Durante mis prácticas en NTT DATA trabajé en entornos Agile, contribuyendo a proyectos
+          reales desde una perspectiva full stack. Me destaco por mi pensamiento analítico, capacidad de adaptación,
+          comunicación efectiva y orientación a resultados, siempre con una actitud resolutiva y colaborativa.</p>
+        <h3>Busco seguir creciendo profesionalmente dentro de entornos
+          colaborativos e innovadores.</h3>
+        <p>Puedes ponerte en contacto conmigo en <a class="link"
+            href="mailto:jcotes.mar@gmail.com">jcotes.mar@gmail.com</a>
+        </p>
+        <p>Ver mi expericia laboral con detalle en <a class="link"
+            href="https://www.linkedin.com/in/jose-cotes/" target="_blank">linkedin</a></p>
+      </section>
+
+      <section id="portfolio">
+        <h2>Portfolio</h2>
+
+        <!-- PRIMERA GALERÍA: PROYECTOS -->
+        <h3>💡Proyectos</h3>
+        <div class="portfolio-gallery">
+          <div class="row">
+            <!-- Proyecto 1 -->
+            <div class="col-xl-3 col-lg-6 col-md-6 col-sm-12">
+              <div class="gallery-item" data-bs-toggle="modal" data-bs-target="#portfolioModal" data-project-index="0">
+                <div class="project-info">
+                  <img src="img/tabla-periodica.png" class="img-fluid" alt="Sistema de Gestión Web">
+                  <div class="project-overlay">
+                    <h4>Tabla Periódica Interactiva</h4>
+                    <p>Explora la química de forma divertida y educativa.</p>
+                    <div class="project-tech">
+                      <span class="tech-tag">HTML5</span>
+                      <span class="tech-tag">CSS3</span>
+                      <span class="tech-tag">JavaScript</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Proyecto 2 -->
+            <div class="col-xl-3 col-lg-6 col-md-6 col-sm-12">
+              <div class="gallery-item" data-bs-toggle="modal" data-bs-target="#portfolioModal" data-project-index="1">
+                <div class="project-info">
+                  <img src="img/kard.png" class="img-fluid" alt="Landing Page Responsiva">
+                  <div class="project-overlay">
+                    <h4>Kard</h4>
+                    <p> Aplicación web para organizar tareas de forma visual.</p>
+                    <div class="project-tech">
+                      <span class="tech-tag">HTML5</span>
+                      <span class="tech-tag">CSS3</span>
+                      <span class="tech-tag">Tailwind</span>
+                      <span class="tech-tag">JavaScript</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Proyecto 3 -->
+            <div class="col-xl-3 col-lg-6 col-md-6 col-sm-12">
+              <div class="gallery-item" data-bs-toggle="modal" data-bs-target="#portfolioModal" data-project-index="2">
+                <div class="project-info">
+                  <img src="img/neon-arcade.png" class="img-fluid" alt="E-commerce Frontend">
+                  <div class="project-overlay">
+                    <h4>Neon Arcade</h4>
+                    <p>Incluye tres juegos clásicos completamente funcionales.</p>
+                    <div class="project-tech">
+                      <span class="tech-tag">HTML</span>
+                      <span class="tech-tag">CSS3</span>
+                      <span class="tech-tag">JavaScript</span>
+                      <span class="tech-tag">Responsive</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Proyecto 4 -->
+            <div class="col-xl-3 col-lg-6 col-md-6 col-sm-12">
+              <div class="gallery-item" data-bs-toggle="modal" data-bs-target="#portfolioModal" data-project-index="3">
+                <div class="project-info">
+                  <img src="img/cineradar.png" class="img-fluid" alt="Dashboard Analytics">
+                  <div class="project-overlay">
+                    <h4>CineRadar</h4>
+                    <p>Panel de control con visualización de datos.</p>
+                    <div class="project-tech">
+                      <span class="tech-tag">HTML</span>
+                      <span class="tech-tag">CSS3</span>
+                      <span class="tech-tag">Javascript</span>
+                      <span class="tech-tag">Tailwind</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- SEPARADOR -->
+        <hr>
+
+        <!-- SEGUNDA GALERÍA: PÁGINAS WEB -->
+        <h3>🌐Páginas Web</h3>
+        <div class="portfolio-gallery">
+          <div class="row">
+            <!-- Página Web 1 -->
+            <div class="col-xl-3 col-lg-6 col-md-6 col-sm-12">
+              <div class="gallery-item" data-bs-toggle="modal" data-bs-target="#websitesModal" data-website-index="0">
+                <div class="project-info">
+                  <img src="img/Edustudio.png" class="img-fluid" alt="Portfolio Personal">
+                  <div class="project-overlay">
+                    <h4>Página web estilo libreta y postits</h4>
+                    <p>Blog sobre educación con diseño original y minimalista.</p>
+                    <div class="project-tech">
+                      <span class="tech-tag">HTML5</span>
+                      <span class="tech-tag">CSS3</span>
+                      <span class="tech-tag">JavaScript</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Página Web 2 -->
+            <div class="col-xl-3 col-lg-6 col-md-6 col-sm-12">
+              <div class="gallery-item" data-bs-toggle="modal" data-bs-target="#websitesModal" data-website-index="1">
+                <div class="project-info">
+                  <img src="img/neonvania.png" class="img-fluid" alt="Restaurante La Mesa">
+                  <div class="project-overlay">
+                    <h4>NeonVania</h4>
+                    <p>Sitio web de un videojuego indie.</p>
+                    <div class="project-tech">
+                      <span class="tech-tag">HTML</span>
+                      <span class="tech-tag">CSS3</span>
+                      <span class="tech-tag">JavaScript</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Página Web 3 -->
+            <div class="col-xl-3 col-lg-6 col-md-6 col-sm-12">
+              <div class="gallery-item" data-bs-toggle="modal" data-bs-target="#websitesModal" data-website-index="2">
+                <div class="project-info">
+                  <img src="img/solsticio.png" class="img-fluid" alt="Blog de Tecnología">
+                  <div class="project-overlay">
+                    <h4>Solsticio</h4>
+                    <p>Sitio web elegante y minimalista para el restaurante mediterráneo.</p>
+                    <div class="project-tech">
+                      <span class="tech-tag">HTML5</span>
+                      <span class="tech-tag">CSS3</span>
+                      <span class="tech-tag">JavaScript</span>
+                      <span class="tech-tag">Responsive</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Página Web 4 -->
+            <div class="col-xl-3 col-lg-6 col-md-6 col-sm-12">
+              <div class="gallery-item" data-bs-toggle="modal" data-bs-target="#websitesModal" data-website-index="3">
+                <div class="project-info">
+                  <img src="img/bodega.png" class="img-fluid" alt="Agencia Creativa">
+                  <div class="project-overlay">
+                    <h4>Bodega Los Vélez</h4>
+                    <p>Landing page con animaciones y efectos</p>
+                    <div class="project-tech">
+                      <span class="tech-tag">HTML5</span>
+                      <span class="tech-tag">Sass</span>
+                      <span class="tech-tag">JavaScript</span>
+                      <span class="tech-tag">Animations</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Modal para la galería de PROYECTOS -->
+      <div class="modal fade" id="portfolioModal" tabindex="-1" aria-labelledby="portfolioModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog modal-xl modal-dialog-centered">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="portfolioModalLabel">Portfolio - Galería de Proyectos</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body text-center p-0">
+              <div id="portfolioCarousel" class="carousel slide" data-bs-interval="false">
+                <div class="carousel-inner">
+                  <!-- Los elementos del carrusel se generarán dinámicamente -->
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#portfolioCarousel"
+                  data-bs-slide="prev">
+                  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                  <span class="visually-hidden">Anterior</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#portfolioCarousel"
+                  data-bs-slide="next">
+                  <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                  <span class="visually-hidden">Siguiente</span>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Modal para la galería de PÁGINAS WEB -->
+      <div class="modal fade" id="websitesModal" tabindex="-1" aria-labelledby="websitesModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-xl modal-dialog-centered">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="websitesModalLabel">Portfolio - Galería de Páginas Web</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body text-center p-0">
+              <div id="websitesCarousel" class="carousel slide" data-bs-interval="false">
+                <div class="carousel-inner">
+                  <!-- Los elementos del carrusel se generarán dinámicamente -->
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#websitesCarousel"
+                  data-bs-slide="prev">
+                  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                  <span class="visually-hidden">Anterior</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#websitesCarousel"
+                  data-bs-slide="next">
+                  <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                  <span class="visually-hidden">Siguiente</span>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <section id="educacion">
+        <h2>Educación</h2>
+
+        <!-- FORMACIÓN ACADÉMICA - 100% ANCHO -->
+        <h3>🎓Formación Académica</h3>
+        <div class="education-academic">
+          <div class="accordion accordion-custom" id="academicAccordion">
+            <!-- Técnico Superior -->
+            <div class="accordion-item">
+              <h4 class="accordion-header" id="headingTecnico">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                  data-bs-target="#collapseTecnico" aria-expanded="false" aria-controls="collapseTecnico">
+                  <div class="accordion-title">
+                    <strong>🎓 Técnico Superior en Sistemas de Comunicaciones e Informáticos</strong>
+                    <span class="institution-year">I.E.S. San Juan Bosco | 2004</span>
+                  </div>
+                </button>
+              </h4>
+              <div id="collapseTecnico" class="accordion-collapse collapse" aria-labelledby="headingTecnico"
+                data-bs-parent="#academicAccordion">
+                <div class="accordion-body">
+                  <p>Formación enfocada en la implementación y mantenimiento de sistemas de comunicación e informáticos,
+                    incluyendo redes, hardware y software.</p>
+  
+                </div>
+              </div>
+            </div>
+
+            <!-- Desarrollo de Aplicaciones Web -->
+            <div class="accordion-item">
+              <h4 class="accordion-header" id="headingDAW">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                  data-bs-target="#collapseDAW" aria-expanded="false" aria-controls="collapseDAW">
+                  <div class="accordion-title">
+                    <strong>🎓 Desarrollo de Aplicaciones Web</strong>
+                    <span class="institution-year">Ilerna | 2025</span>
+                  </div>
+                </button>
+              </h4>
+              <div id="collapseDAW" class="accordion-collapse collapse" aria-labelledby="headingDAW"
+                data-bs-parent="#academicAccordion">
+                <div class="accordion-body">
+                  <p>Estudios centrados en la creación y desarrollo de aplicaciones web, abarcando tanto el front-end
+                    como el back-end.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- FORMACIÓN COMPLEMENTARIA - DOS COLUMNAS -->
+        <h3>📚Formación Complementaria</h3>
+        <div class="education-complementary">
+          <div class="row">
+            <!-- COLUMNA IZQUIERDA -->
+            <div class="col-md-6">
+              <div class="accordion accordion-custom" id="complementaryAccordionLeft">
+                <!-- Máster de Diseño Web -->
+                <div class="accordion-item">
+                  <h4 class="accordion-header" id="headingMaster">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                      data-bs-target="#collapseMaster" aria-expanded="false" aria-controls="collapseMaster">
+                      <div class="accordion-title">
+                        <strong>📚 Máster de Diseño Web</strong>
+                        <span class="institution-year">Aula Creactiva (170 h) | 2025</span>
+                      </div>
+                    </button>
+                  </h4>
+                  <div id="collapseMaster" class="accordion-collapse collapse" aria-labelledby="headingMaster"
+                    data-bs-parent="#complementaryAccordionLeft">
+                    <div class="accordion-body">
+                      <p>Programa de máster intensivo en diseño web, cubriendo principios de UI/UX, herramientas de
+                        diseño y últimas tendencias.</p>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Sistemas Operativos -->
+                <div class="accordion-item">
+                  <h4 class="accordion-header" id="headingSO">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                      data-bs-target="#collapseSO" aria-expanded="false" aria-controls="collapseSO">
+                      <div class="accordion-title">
+                        <strong>📚 Sistemas Operativos y Aplicaciones Informáticas</strong>
+                        <span class="institution-year">(60 h) | 2025</span>
+                      </div>
+                    </button>
+                  </h4>
+                  <div id="collapseSO" class="accordion-collapse collapse" aria-labelledby="headingSO"
+                    data-bs-parent="#complementaryAccordionLeft">
+                    <div class="accordion-body">
+                      <p>Curso sobre el funcionamiento, administración y optimización de sistemas operativos, así como
+                        el manejo de aplicaciones informáticas esenciales.</p>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Gestión de Redes Sociales -->
+                <div class="accordion-item">
+                  <h4 class="accordion-header" id="headingRRSS">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                      data-bs-target="#collapseRRSS" aria-expanded="false" aria-controls="collapseRRSS">
+                      <div class="accordion-title">
+                        <strong>📚 Gestión de Redes Sociales y Entorno Digital</strong>
+                        <span class="institution-year">(60 h) | 2025</span>
+                      </div>
+                    </button>
+                  </h4>
+                  <div id="collapseRRSS" class="accordion-collapse collapse" aria-labelledby="headingRRSS"
+                    data-bs-parent="#complementaryAccordionLeft">
+                    <div class="accordion-body">
+                      <p>Formación en estrategias de marketing digital y gestión de comunidades online en diversas
+                        plataformas de redes sociales.</p>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Metodologías Agile -->
+                <div class="accordion-item">
+                  <h4 class="accordion-header" id="headingAgile">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                      data-bs-target="#collapseAgile" aria-expanded="false" aria-controls="collapseAgile">
+                      <div class="accordion-title">
+                        <strong>📚 Metodologías Agile y Scrum</strong>
+                        <span class="institution-year">(60 h) | 2025</span>
+                      </div>
+                    </button>
+                  </h4>
+                  <div id="collapseAgile" class="accordion-collapse collapse" aria-labelledby="headingAgile"
+                    data-bs-parent="#complementaryAccordionLeft">
+                    <div class="accordion-body">
+                      <p>Curso práctico sobre la implementación de metodologías ágiles como Scrum para la gestión
+                        eficiente de proyectos.</p>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Auditoría de Seguridad -->
+                <div class="accordion-item">
+                  <h4 class="accordion-header" id="headingAuditoria">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                      data-bs-target="#collapseAuditoria" aria-expanded="false" aria-controls="collapseAuditoria">
+                      <div class="accordion-title">
+                        <strong>📚 Auditoría de Seguridad Informática</strong>
+                        <span class="institution-year">(60 h) | 2025</span>
+                      </div>
+                    </button>
+                  </h4>
+                  <div id="collapseAuditoria" class="accordion-collapse collapse" aria-labelledby="headingAuditoria"
+                    data-bs-parent="#complementaryAccordionLeft">
+                    <div class="accordion-body">
+                      <p>Capacitación en la evaluación y análisis de la seguridad de sistemas informáticos para
+                        identificar vulnerabilidades y riesgos.</p>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Publicación de Páginas Web -->
+                <div class="accordion-item">
+                  <h4 class="accordion-header" id="headingPublicacion">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                      data-bs-target="#collapsePublicacion" aria-expanded="false" aria-controls="collapsePublicacion">
+                      <div class="accordion-title">
+                        <strong>📚 Publicación de Páginas Web</strong>
+                        <span class="institution-year">(60 h) | 2025</span>
+                      </div>
+                    </button>
+                  </h4>
+                  <div id="collapsePublicacion" class="accordion-collapse collapse" aria-labelledby="headingPublicacion"
+                    data-bs-parent="#complementaryAccordionLeft">
+                    <div class="accordion-body">
+                      <p>Curso sobre los procesos y herramientas necesarias para la publicación y mantenimiento de
+                        sitios web en línea.</p>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Gestión de Bases de Datos -->
+
+              </div>
+            </div>
+
+            <!-- COLUMNA DERECHA -->
+            <div class="col-md-6">
+              <div class="accordion accordion-custom" id="complementaryAccordionRight">
+                <!-- Ciberseguridad -->
+                <div class="accordion-item">
+                  <h4 class="accordion-header" id="headingCiber">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                      data-bs-target="#collapseCiber" aria-expanded="false" aria-controls="collapseCiber">
+                      <div class="accordion-title">
+                        <strong>📚 Ciberseguridad aplicada a la empresa</strong>
+                        <span class="institution-year">(60 h) | 2025</span>
+                      </div>
+                    </button>
+                  </h4>
+                  <div id="collapseCiber" class="accordion-collapse collapse" aria-labelledby="headingCiber"
+                    data-bs-parent="#complementaryAccordionRight">
+                    <div class="accordion-body">
+                      <p>Curso enfocado en la protección de activos digitales y la prevención de ataques cibernéticos en
+                        entornos empresariales.</p>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Blockchain -->
+                <div class="accordion-item">
+                  <h4 class="accordion-header" id="headingBlockchain">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                      data-bs-target="#collapseBlockchain" aria-expanded="false" aria-controls="collapseBlockchain">
+                      <div class="accordion-title">
+                        <strong>📚 Blockchain: Aplicación y Gestión</strong>
+                        <span class="institution-year">(60 h) | 2025</span>
+                      </div>
+                    </button>
+                  </h4>
+                  <div id="collapseBlockchain" class="accordion-collapse collapse" aria-labelledby="headingBlockchain"
+                    data-bs-parent="#complementaryAccordionRight">
+                    <div class="accordion-body">
+                      <p>Capacitación en la tecnología blockchain, sus aplicaciones prácticas y cómo gestionar proyectos
+                        basados en esta tecnología.</p>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- WordPress -->
+                <div class="accordion-item">
+                  <h4 class="accordion-header" id="headingWordPress">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                      data-bs-target="#collapseWordPress" aria-expanded="false" aria-controls="collapseWordPress">
+                      <div class="accordion-title">
+                        <strong>📚 Construcción de páginas web con WordPress</strong>
+                        <span class="institution-year">(60h) | 2025</span>
+                      </div>
+                    </button>
+                  </h4>
+                  <div id="collapseWordPress" class="accordion-collapse collapse" aria-labelledby="headingWordPress"
+                    data-bs-parent="#complementaryAccordionRight">
+                    <div class="accordion-body">
+                      <p>Curso práctico para crear y gestionar sitios web utilizando la plataforma WordPress, desde la
+                        configuración inicial hasta la publicación.</p>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- SQL -->
+                <div class="accordion-item">
+                  <h4 class="accordion-header" id="headingSQL">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                      data-bs-target="#collapseSQL" aria-expanded="false" aria-controls="collapseSQL">
+                      <div class="accordion-title">
+                        <strong>📚 Programación de bases de datos relacionales y SQL</strong>
+                        <span class="institution-year">(60h) | 2025</span>
+                      </div>
+                    </button>
+                  </h4>
+                  <div id="collapseSQL" class="accordion-collapse collapse" aria-labelledby="headingSQL"
+                    data-bs-parent="#complementaryAccordionRight">
+                    <div class="accordion-body">
+                      <p>Formación en el diseño y la programación de bases de datos relacionales utilizando SQL para la
+                        consulta y manipulación de datos.</p>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Photoshop -->
+                <div class="accordion-item">
+                  <h4 class="accordion-header" id="headingPhotoshop">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                      data-bs-target="#collapsePhotoshop" aria-expanded="false" aria-controls="collapsePhotoshop">
+                      <div class="accordion-title">
+                        <strong>📚 Gestión de Bases de Datos</strong>
+                        <span class="institution-year">(60h) | 2025</span>
+                      </div>
+                    </button>
+                  </h4>
+                  <div id="collapsePhotoshop" class="accordion-collapse collapse" aria-labelledby="headingPhotoshop"
+                    data-bs-parent="#complementaryAccordionRight">
+                    <div class="accordion-body">
+                      <p>Formación en el diseño, implementación y administración de bases de datos relacionales y no
+                        relacionales.</p>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Fotografía Digital -->
+                <div class="accordion-item">
+                  <h4 class="accordion-header" id="headingFotografia">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                      data-bs-target="#collapseFotografia" aria-expanded="false" aria-controls="collapseFotografia">
+                      <div class="accordion-title">
+                        <strong>📚 Curso básico de Fotografía Digital</strong>
+                        <span class="institution-year">2016 (14 h)</span>
+                      </div>
+                    </button>
+                  </h4>
+                  <div id="collapseFotografia" class="accordion-collapse collapse" aria-labelledby="headingFotografia"
+                    data-bs-parent="#complementaryAccordionRight">
+                    <div class="accordion-body">
+                      <p>Fundamentos de la fotografía digital, incluyendo el manejo de la cámara, composición y
+                        principios básicos de edición.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <h3>✨En proceso de aprendizaje</h3>
+        <div class="proceso" >
+         <ul>
+          <li>Angular</li>
+          <li>NodeJs</li>
+          <li>Laravel</li>
+         </ul>
+
+        </div>
+      </section>
+
+      <section id="skills">
+        <h2>Habilidades</h2>
+        <div class="tecno">
+          <h3>💻Tecnologias</h3>
+          <div class="icons">
+            <img src="img/iconos/tech/bootstrap.png" alt="Bootstrap">
+            <img src="img/iconos/tech/Js.png" alt="JavaScript">
+            <img src="img/iconos/tech/Html.png" alt="HTML5">
+            <img src="img/iconos/tech/Css.png" alt="CSS3">
+            <img src="img/iconos/tech/jquery.png" alt="jQuery">
+            <img src="img/iconos/tech/tailwind.png" alt="Tailwind CSS">
+            <img src="img/iconos/tech/mysql.png" alt="MySQL">
+            <img src="img/iconos/tech/sass .png" alt="Sass">
+            <img src="img/iconos/tech/less.png" alt="Less">
+            <img src="img/iconos/tech/Php.png" alt="PHP">
+          </div>
+        </div>
+        <hr>
+        <div class="tools">
+          <h3>🛠️Herramientas</h3>
+          <div class="icons">
+            <img src="img/iconos/tools/lightroom.png" alt="Lightroom">
+            <img src="img/iconos/tools/Photoshop.png" alt="Photoshop">
+            <img src="img/iconos/tools/Ilustrator.png" alt="Illustrator">
+            <img src="img/iconos/tools/wordpress_174881.png" alt="WordPress">
+          </div>
+        </div>
+
+        <hr>
+        <div class="otros">
+          <h3>🧠Otros conocimientos</h3>
+          <p>Sistemas operativos Windows/Linux</p>
+          <p>Diseño web (UI/UX)</p>
+          <p>Ciberseguridad y auditoría</p>
+          <p>Metodologías Agile y Scrum</p>
+        </div>
+      </section>
+
+
+      <section id="contacto">
+        <h2>Contacto</h2>
+        <div class="contacto-cards">
+          <div class="card">
+            <div class="card-image">
+              <img src="img/iconos/redes/mail.png" alt="Email" />
+            </div>
+            <div class="card-content">
+              <h4>Contáctame por Email</h4>
+              <p><a href="mailto:jcotes.mar@gmail.com">jcotes.mar@gmail.com</a></p>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-image">
+              <img src="img/iconos/redes/whatsapp.png" alt="WhatsApp" />
+            </div>
+            <div class="card-content">
+              <h4>Envíame un mensaje por WhatsApp</h4>
+              <p><a href="https://wa.me/CODIGO_PAIS_NUMERO_TELEFONO" target="_blank">+34 660774368</a></p>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-image">
+              <img src="img/iconos/redes/link.png" alt="LinkedIn" />
+            </div>
+            <div class="card-content">
+              <h4>Visita mi perfil de LinkedIn</h4>
+              <p><a href="https://www.linkedin.com/in/jose-cotes/" target="_blank">Jose Cotes</a></p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <hr>
+      <div class="footer">
+        <h3>Proyecto desarrollado con:</h3>
+        <img src="img/iconos/tech/Html.png" alt="HTML">
+        <img src="img/iconos/tech/Css.png" alt="Css">
+        <img src="img/iconos/tech/Js.png" alt="JavaScript">
+        <img src="img/iconos/tech/bootstrap.png" alt="Bootstrap">
+        <p>&copy; 2025 José Cotes Martínez. Todos los derechos reservados.</p>
+      </div>
+
+    </main>
+  </div>
+
+
+  <!-- Bootstrap JavaScript -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+    crossorigin="anonymous"></script>
+  <!--JavaScript-->
+  
+  <script src="js/portfolio-gallery.js"></script>
+  <script src="js/scroll-sections.js"></script>
+  <script src="js/scroll-center.js"></script>
+  <script src="js/main.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tabla Periódica Interactiva</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>🧪 Tabla Periódica Interactiva 🧪</h1>
+        
+        <!-- Panel de controles -->
+        <div class="controles">
+            <div class="filter">
+            <div class="control-group">
+                <label for="busqueda">🔍 Buscar elemento:</label>
+                <input type="text" id="busqueda" class="busqueda" placeholder="Ej: Hidrógeno, H, 1...">
+            </div>
+            <div class="control-group">
+                <label for="filtroTipo">🔬 Filtrar por tipo:</label>
+                <select id="filtroTipo" class="filtro-tipo">
+                    <option value="">Todos los elementos</option>
+                    <option value="metales-alcalinos">Metales Alcalinos</option>
+                    <option value="alcalinoterreos">Alcalinotérreos</option>
+                    <option value="metales-transicion">Metales de Transición</option>
+                    <option value="otros-metales">Otros Metales</option>
+                    <option value="metaloides">Metaloides</option>
+                    <option value="no-metales">No Metales</option>
+                    <option value="halogenos">Halógenos</option>
+                    <option value="gases-nobles">Gases Nobles</option>
+                    <option value="lantanidos">Lantánidos</option>
+                    <option value="actinidos">Actínidos</option>
+                </select>
+            </div>
+            <button id="limpiarFiltros" class="btn-limpiar">🗑️ Limpiar filtros</button>
+            </div>
+            <button id="modoQuiz" class="btn-quiz">🎮 Modo Quiz</button>
+        </div>
+
+        <!-- Layout principal con tabla y leyenda -->
+        <div class="main-layout">
+            <div class="tabla-container">
+                <div class="tabla-periodica" id="tablaPeriodica"></div>
+            </div>
+            
+            <!-- Leyenda lateral -->
+            <div class="leyenda">
+                <h3>Tipos de Elementos</h3>
+                <div class="leyenda-container">
+                    <div class="leyenda-item" data-tipo="metales-alcalinos">
+                        <div class="leyenda-color" style="background: var(--metales-alcalinos)"></div>
+                        <span>Metales Alcalinos</span>
+                    </div>
+                    <div class="leyenda-item" data-tipo="alcalinoterreos">
+                        <div class="leyenda-color" style="background: var(--alcalinoterreos)"></div>
+                        <span>Alcalinotérreos</span>
+                    </div>
+                    <div class="leyenda-item" data-tipo="metales-transicion">
+                        <div class="leyenda-color" style="background: var(--metales-transicion)"></div>
+                        <span>Metales de Transición</span>
+                    </div>
+                    <div class="leyenda-item" data-tipo="otros-metales">
+                        <div class="leyenda-color" style="background: var(--otros-metales)"></div>
+                        <span>Otros Metales</span>
+                    </div>
+                    <div class="leyenda-item" data-tipo="metaloides">
+                        <div class="leyenda-color" style="background: var(--metaloides)"></div>
+                        <span>Metaloides</span>
+                    </div>
+                    <div class="leyenda-item" data-tipo="no-metales">
+                        <div class="leyenda-color" style="background: var(--no-metales)"></div>
+                        <span>No Metales</span>
+                    </div>
+                    <div class="leyenda-item" data-tipo="halogenos">
+                        <div class="leyenda-color" style="background: var(--halogenos)"></div>
+                        <span>Halógenos</span>
+                    </div>
+                    <div class="leyenda-item" data-tipo="gases-nobles">
+                        <div class="leyenda-color" style="background: var(--gases-nobles)"></div>
+                        <span>Gases Nobles</span>
+                    </div>
+                    <div class="leyenda-item" data-tipo="lantanidos">
+                        <div class="leyenda-color" style="background: var(--lantanidos)"></div>
+                        <span>Lantánidos</span>
+                    </div>
+                    <div class="leyenda-item" data-tipo="actinidos">
+                        <div class="leyenda-color" style="background: var(--actinidos)"></div>
+                        <span>Actínidos</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Tooltip mejorado -->
+    <div class="info-tooltip" id="tooltip"></div>
+
+    <script src="js/scipt.js"></script>
+</body>
+</html>

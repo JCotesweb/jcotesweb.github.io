@@ -1,0 +1,499 @@
+/* Variables CSS para colores de elementos */
+:root {
+    --element-size: 68px;
+    --metales-alcalinos: #ff9999;
+    --alcalinoterreos: #ffb366;
+    --metales-transicion: #dfdf65;
+    --otros-metales: #99ff99;
+    --metaloides: #99ffff;
+    --no-metales: #9999ff;
+    --halogenos: #ff99ff;
+    --gases-nobles: #ff99cc;
+    --lantanidos: #cc99ff;
+    --actinidos: #ffcc99;
+}
+
+/* Reset y configuración base */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: #fff;
+    margin: 0;
+    padding: 20px;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow-x: auto;
+}
+
+/* Título principal */
+h1 {
+    text-align: center;
+    color: #fff;
+    margin-bottom: 2vhpx;
+    font-size: 2.5em;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+    animation: fadeInDown 1s ease-out;
+}
+
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.container {
+    width: 100%;
+    max-width: 1600px;
+    margin: 0 auto;
+}
+
+/* Panel de controles de búsqueda y filtrado */
+.controles {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-bottom: 2vh;
+    padding: 1%;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 15px;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+    align-items: end;
+    justify-content: space-evenly;
+}
+
+.filter{
+    width: 50%;
+    display: flex;
+    align-items: end;
+    justify-content: space-evenly;
+}
+
+.control-group {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.control-group label {
+    font-size: 0.9em;
+    font-weight: bold;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.busqueda {
+    padding: 8px 12px;
+    border: none;
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.9);
+    color: #333;
+    font-size: 14px;
+    width: 200px;
+    transition: all 0.3s ease;
+}
+
+.busqueda:focus {
+    outline: none;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+    transform: scale(1.02);
+}
+
+.filtro-tipo {
+    padding: 8px 12px;
+    border: none;
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.9);
+    color: #333;
+    font-size: 14px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.filtro-tipo:hover {
+    transform: scale(1.02);
+}
+
+.btn-limpiar, .btn-quiz {
+    padding: 8px 15px;
+    border: none;
+    border-radius: 8px;
+    color: white;
+    font-size: 14px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+}
+
+.btn-limpiar {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+.btn-limpiar:hover {
+    background: rgba(255, 255, 255, 0.3);
+    transform: scale(1.05);
+}
+
+.btn-quiz {
+    background: linear-gradient(45deg, #ff6b6b, #4ecdc4);
+    border: 2px solid rgba(255, 255, 255, 0.5);
+    font-weight: bold;
+}
+
+.btn-quiz:hover {
+    background: linear-gradient(45deg, #ff5252, #26a69a);
+    transform: scale(1.05);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* Layout principal con tabla y leyenda */
+.main-layout {
+    display: flex;
+    gap: 30px;
+    align-items: flex-start;
+}
+
+.tabla-container {
+    flex: 1;
+}
+
+/* Tabla periódica grid */
+.tabla-periodica {
+    display: grid;
+    grid-template-columns: repeat(18, 60px);
+    grid-template-rows: repeat(10, 60px);
+    gap: 2px;
+    padding: 1% 8%;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+}
+
+/* Estilos para elementos químicos */
+.elemento {
+    width: 60px;
+    height: 60px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    animation: fadeIn 0.6s ease-out backwards;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.elemento:hover {
+    transform: scale(1.15) rotate(5deg);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+    z-index: 10;
+    border-color: rgba(255, 255, 255, 0.8);
+}
+
+/* Estados de filtrado para elementos */
+.elemento.oculto {
+    opacity: 0.2;
+    transform: scale(0.9);
+    pointer-events: none;
+}
+
+.elemento.destacado {
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.8);
+    border-color: rgba(255, 255, 255, 1);
+    animation: pulso 1.5s infinite;
+}
+
+@keyframes pulso {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+}
+
+/* Elementos de texto dentro de cada elemento químico */
+.simbolo {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #2c3e50;
+    text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.8);
+}
+
+.numero {
+    position: absolute;
+    top: 2px;
+    left: 4px;
+    font-size: 0.7em;
+    color: #2c3e50;
+    font-weight: bold;
+}
+
+.masa {
+    position: absolute;
+    bottom: 2px;
+    right: 4px;
+    font-size: 0.6em;
+    color: #2c3e50;
+    font-weight: bold;
+}
+
+/* Espacios vacíos para dar autenticidad a la tabla */
+.espacio-vacio {
+    grid-column: span 1;
+}
+
+/* Tooltip informativo mejorado */
+.info-tooltip {
+    position: absolute;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    padding: 20px;
+    border-radius: 10px;
+    z-index: 100;
+    width: 320px;
+    display: none;
+    pointer-events: none;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+}
+
+.tooltip-header {
+    font-size: 1.3em;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.tooltip-simbolo {
+    background: rgba(255, 255, 255, 0.2);
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 0.9em;
+}
+
+.tooltip-info {
+    font-size: 0.9em;
+    line-height: 1.6;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.tooltip-info strong {
+    color: #fff;
+}
+
+/* Leyenda lateral sticky */
+.leyenda {
+    width: 280px;
+    padding: 25px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 15px;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+    position: sticky;
+    top: 20px;
+    max-height: calc(100vh - 40px);
+    overflow-y: auto;
+}
+
+.leyenda h3 {
+    margin: 0 0 20px 0;
+    text-align: center;
+    font-size: 1.2em;
+}
+
+.leyenda-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 0.9em;
+    padding: 10px;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    margin-bottom: 8px;
+    cursor: pointer;
+}
+
+.leyenda-item:hover {
+    background: rgba(255, 255, 255, 0.1);
+    transform: translateX(5px);
+}
+
+.leyenda-color {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    flex-shrink: 0;
+}
+
+/* Animación de brillo para elementos seleccionados */
+@keyframes brillar {
+    0% { 
+        transform: scale(1) rotate(0deg);
+        filter: brightness(1);
+    }
+    25% { 
+        transform: scale(1.2) rotate(180deg);
+        filter: brightness(1.5);
+    }
+    50% { 
+        transform: scale(1.1) rotate(360deg);
+        filter: brightness(1.8);
+    }
+    75% { 
+        transform: scale(1.15) rotate(540deg);
+        filter: brightness(1.3);
+    }
+    100% { 
+        transform: scale(1) rotate(720deg);
+        filter: brightness(1);
+    }
+}
+
+.brillar {
+    animation: brillar 0.8s ease-in-out;
+}
+
+/* Responsividad para diferentes tamaños de pantalla */
+@media (max-width: 1400px) {
+    .main-layout {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .leyenda {
+        width: 100%;
+        max-width: 800px;
+        position: static;
+        max-height: none;
+        overflow-y: visible;
+    }
+    
+    .leyenda-container {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 10px;
+    }
+}
+
+@media (max-width: 1200px) {
+    .tabla-periodica {
+        grid-template-columns: repeat(18, 50px);
+        grid-template-rows: repeat(10, 50px);
+    }
+    
+    .elemento {
+        width: 50px;
+        height: 50px;
+    }
+    
+    .simbolo {
+        font-size: 1em;
+    }
+}
+
+@media (max-width: 800px) {
+    .controles {
+        flex-direction: column;
+        gap: 10px;
+    }
+    
+    .control-group {
+        width: 100%;
+        max-width: 300px;
+    }
+    
+    .busqueda, .filtro-tipo {
+        width: 100%;
+    }
+    
+    .tabla-periodica {
+        grid-template-columns: repeat(18, 40px);
+        grid-template-rows: repeat(10, 40px);
+        padding: 15px;
+    }
+    
+    .elemento {
+        width: 40px;
+        height: 40px;
+    }
+    
+    .simbolo {
+        font-size: 0.8em;
+    }
+    
+    .numero, .masa {
+        font-size: 0.5em;
+    }
+    
+    .info-tooltip {
+        width: 280px;
+        padding: 15px;
+    }
+}
+
+@media (max-width: 600px) {
+    .tabla-periodica {
+        grid-template-columns: repeat(18, 35px);
+        grid-template-rows: repeat(10, 35px);
+    }
+    
+    .elemento {
+        width: 35px;
+        height: 35px;
+    }
+    
+    .simbolo {
+        font-size: 0.7em;
+    }
+}
+
+/* Indicador de información adicional */
+.info-hint {
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(0,0,0,0.8);
+    color: white;
+    padding: 10px 15px;
+    border-radius: 20px;
+    font-size: 0.8em;
+    z-index: 1000;
+    animation: slideUp 0.5s ease-out;
+}
+
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateX(-50%) translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(-50%) translateY(0);
+    }
+}

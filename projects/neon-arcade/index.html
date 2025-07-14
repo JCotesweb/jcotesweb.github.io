@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NEON ARCADE</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body class="neon-enabled">
+    <div id="main-menu">
+        <div class="header">
+            <h1>NEON ARCADE</h1>
+            <p>RETRO GAMING EXPERIENCE</p>
+        </div>
+        
+        <div class="neon-control">
+            <button class="neon-toggle" onclick="toggleNeon()">
+                <i class="fas fa-lightbulb"></i> APAGAR
+            </button>
+        </div>
+        
+        <div class="game-grid">
+            <div class="game-card" onclick="showGame('tic-tac-toe')">
+                <i class="fas fa-hashtag"></i>
+                <h3>TRES EN RAYA</h3>
+                <p>Clásico juego de estrategia retro</p>
+            </div>
+            
+            <div class="game-card" onclick="showGame('rock-paper-scissors')">
+                <i class="fas fa-hand-rock"></i>
+                <h3>PIEDRA PAPEL TIJERA</h3>
+                <p>Desafía a la inteligencia artificial</p>
+            </div>
+            
+            <div class="game-card" onclick="showGame('memory-game')">
+                <i class="fas fa-brain"></i>
+                <h3>MEMORAMA</h3>
+                <p>Ejercita tu mente cibernética</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Tres en Raya -->
+    <div id="tic-tac-toe" class="game-area">
+        <button class="back-btn" onclick="showMainMenu()">
+            <i class="fas fa-arrow-left"></i> VOLVER AL MENU
+        </button>
+        
+        <h2 class="game-title">TRES EN RAYA</h2>
+        
+        <div class="score-board">
+            <div id="tic-status">Turno del Jugador X</div>
+            <div style="margin-top: 10px;">Jugador X: <span id="score-x">0</span> | Jugador O: <span id="score-o">0</span></div>
+        </div>
+        
+        <div class="tic-tac-toe">
+            <button class="tic-cell" onclick="makeMove(0)"></button>
+            <button class="tic-cell" onclick="makeMove(1)"></button>
+            <button class="tic-cell" onclick="makeMove(2)"></button>
+            <button class="tic-cell" onclick="makeMove(3)"></button>
+            <button class="tic-cell" onclick="makeMove(4)"></button>
+            <button class="tic-cell" onclick="makeMove(5)"></button>
+            <button class="tic-cell" onclick="makeMove(6)"></button>
+            <button class="tic-cell" onclick="makeMove(7)"></button>
+            <button class="tic-cell" onclick="makeMove(8)"></button>
+        </div>
+        
+        <div style="text-align: center;">
+            <button class="reset-btn" onclick="resetTicTacToe()">NUEVA PARTIDA</button>
+        </div>
+    </div>
+
+    <!-- Piedra Papel Tijera -->
+    <div id="rock-paper-scissors" class="game-area">
+        <button class="back-btn" onclick="showMainMenu()">
+            <i class="fas fa-arrow-left"></i> VOLVER AL MENU
+        </button>
+        
+        <h2 class="game-title">PIEDRA PAPEL TIJERA</h2>
+        
+        <div class="score-board">
+            <div>HUMANO: <span id="player-score">0</span> | MÁQUINA: <span id="computer-score">0</span></div>
+        </div>
+        
+        <div class="rps-choices">
+            <button class="rps-btn" onclick="playRPS('rock')" title="PIEDRA">
+                🗿
+            </button>
+            <button class="rps-btn" onclick="playRPS('paper')" title="PAPEL">
+                📄
+            </button>
+            <button class="rps-btn" onclick="playRPS('scissors')" title="TIJERA">
+                ✂️
+            </button>
+        </div>
+        
+        <div class="rps-result" id="rps-result">
+            SELECCIONA TU ARMA DIGITAL
+        </div>
+        
+        <div style="text-align: center;">
+            <button class="reset-btn" onclick="resetRPS()">REINICIAR BATALLA</button>
+        </div>
+    </div>
+
+    <!-- Memorama -->
+    <div id="memory-game" class="game-area">
+        <button class="back-btn" onclick="showMainMenu()">
+            <i class="fas fa-arrow-left"></i> VOLVER AL MENU
+        </button>
+        
+        <h2 class="game-title">MEMORAMA</h2>
+        
+        <div class="score-board">
+            <div>INTENTOS: <span id="attempts">0</span> | PARES: <span id="pairs">0</span>/8</div>
+            <div id="memory-status" style="margin-top: 10px;">ENCUENTRA TODOS LOS PARES DIGITALES</div>
+        </div>
+        
+        <div class="memory-grid" id="memory-grid"></div>
+        
+        <div style="text-align: center;">
+            <button class="reset-btn" onclick="resetMemoryGame()">NUEVA SESIÓN</button>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+    <script src="js/sounds.js"></script>
+    <script src="js/navigation.js"></script>
+    <script src="js/tresenraya.js"></script>
+    <script src="js/piedra-papel-tijera.js"></script>
+    <script src="js/memory-game.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>

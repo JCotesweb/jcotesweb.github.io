@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz - Tabla Periódica Interactiva</title>
+    <link rel="stylesheet" href="css/quiz-styles.css">
+</head>
+<body>
+    <div class="container">
+        <header class="quiz-header">
+            <h1>🎮 Quiz de la Tabla Periódica</h1>
+            <button id="volverTabla" class="btn-volver">← Volver a la Tabla</button>
+        </header>
+
+        <!-- Pantalla de inicio -->
+        <div id="pantallaInicio" class="pantalla activa">
+            <div class="bienvenida">
+                <h2>¡Pon a prueba tus conocimientos!</h2>
+                <p>Elige el tipo de desafío que prefieras:</p>
+                
+                <div class="modos-juego">
+                    <div class="modo-card" data-modo="identificar">
+                        <div class="modo-icon">🔍</div>
+                        <h3>Identificar Elemento</h3>
+                        <p>Te doy las propiedades, tú encuentras el elemento</p>
+                        <div class="dificultad">Fácil - Medio</div>
+                    </div>
+                    
+                    <div class="modo-card" data-modo="simbolos">
+                        <div class="modo-icon">⚛️</div>
+                        <h3>Símbolos Químicos</h3>
+                        <p>¿Sabes cuál es el símbolo de cada elemento?</p>
+                        <div class="dificultad">Fácil</div>
+                    </div>
+                    
+                    <div class="modo-card" data-modo="propiedades">
+                        <div class="modo-icon">📊</div>
+                        <h3>Propiedades</h3>
+                        <p>Masa atómica, configuración electrónica y más</p>
+                        <div class="dificultad">Medio - Difícil</div>
+                    </div>
+                    
+                    <div class="modo-card" data-modo="aplicaciones">
+                        <div class="modo-icon">🔬</div>
+                        <h3>Aplicaciones</h3>
+                        <p>¿Para qué se usa cada elemento en la vida real?</p>
+                        <div class="dificultad">Medio</div>
+                    </div>
+                    
+                    <div class="modo-card" data-modo="mezclado">
+                        <div class="modo-icon">🎲</div>
+                        <h3>Desafío Mixto</h3>
+                        <p>¡De todo un poco! El desafío definitivo</p>
+                        <div class="dificultad">Todas</div>
+                    </div>
+                    
+                    <div class="modo-card" data-modo="cronometro">
+                        <div class="modo-icon">⏱️</div>
+                        <h3>Contra el Tiempo</h3>
+                        <p>¡Responde lo más rápido que puedas!</p>
+                        <div class="dificultad">¡Intenso!</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Pantalla de configuración -->
+        <div id="pantallaConfig" class="pantalla">
+            <div class="configuracion">
+                <h2>Configurar Quiz</h2>
+                
+                <div class="config-group">
+                    <label for="numPreguntas">Número de preguntas:</label>
+                    <select id="numPreguntas">
+                        <option value="5">5 preguntas</option>
+                        <option value="10" selected>10 preguntas</option>
+                        <option value="15">15 preguntas</option>
+                        <option value="20">20 preguntas</option>
+                    </select>
+                </div>
+                
+                <div class="config-group" id="configTiempo" style="display: none;">
+                    <label for="tiempoPregunta">Tiempo por pregunta:</label>
+                    <select id="tiempoPregunta">
+                        <option value="10">10 segundos</option>
+                        <option value="15" selected>15 segundos</option>
+                        <option value="20">20 segundos</option>
+                        <option value="30">30 segundos</option>
+                    </select>
+                </div>
+                
+                <div class="config-group">
+                    <label for="dificultad">Elementos a incluir:</label>
+                    <select id="dificultad">
+                        <option value="basicos">Básicos (primeros 20)</option>
+                        <option value="comunes" selected>Comunes (primeros 54)</option>
+                        <option value="todos">Todos los elementos</option>
+                        <option value="metales">Solo metales</option>
+                        <option value="no-metales">Solo no metales</option>
+                    </select>
+                </div>
+                
+                <div class="botones-config">
+                    <button id="empezarQuiz" class="btn-empezar">🚀 ¡Empezar Quiz!</button>
+                    <button id="volverInicio" class="btn-secundario">← Cambiar modo</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Pantalla de juego -->
+        <div id="pantallaJuego" class="pantalla">
+            <div class="game-header">
+                <div class="progreso">
+                    <span id="preguntaActual">1</span> / <span id="totalPreguntas">10</span>
+                </div>
+                <div id="cronometro" class="cronometro" style="display: none;">
+                    <span id="tiempo">15</span>s
+                </div>
+                <div class="puntuacion">
+                    Puntos: <span id="puntos">0</span>
+                </div>
+            </div>
+            
+            <div class="pregunta-container">
+                <div id="pregunta" class="pregunta"></div>
+                <div id="pista" class="pista"></div>
+                
+                <div id="opcionesContainer" class="opciones-container">
+                    <!-- Las opciones se generan dinámicamente -->
+                </div>
+                
+                <div id="retroalimentacion" class="retroalimentacion"></div>
+                
+                <button id="siguientePregunta" class="btn-siguiente" style="display: none;">
+                    Siguiente →
+                </button>
+            </div>
+        </div>
+
+        <!-- Pantalla de resultados -->
+        <div id="pantallaResultados" class="pantalla">
+            <div class="resultados">
+                <h2>🎉 ¡Quiz Completado!</h2>
+                
+                <div class="puntuacion-final">
+                    <div class="puntos-grandes">
+                        <span id="puntosFinal">0</span> / <span id="puntosMaximo">100</span>
+                    </div>
+                    <div class="porcentaje">
+                        <span id="porcentaje">0</span>%
+                    </div>
+                </div>
+                
+                <div id="medalla" class="medalla">
+                    <div class="medalla-icon">🥇</div>
+                    <div class="medalla-texto">¡Excelente!</div>
+                </div>
+                
+                <div class="estadisticas">
+                    <div class="stat">
+                        <span class="stat-number" id="correctas">0</span>
+                        <span class="stat-label">Correctas</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-number" id="incorrectas">0</span>
+                        <span class="stat-label">Incorrectas</span>
+                    </div>
+                    <div class="stat" id="tiempoTotal" style="display: none;">
+                        <span class="stat-number" id="tiempoFinal">0</span>
+                        <span class="stat-label">Segundos</span>
+                    </div>
+                </div>
+                
+                <div id="resumenRespuestas" class="resumen-respuestas">
+                    <!-- Se llena dinámicamente -->
+                </div>
+                
+                <div class="botones-finales">
+                    <button id="jugarOtravez" class="btn-empezar">🔄 Jugar otra vez</button>
+                    <button id="volverMenu" class="btn-secundario">📚 Cambiar modo</button>
+                    <button id="volverTablaFinal" class="btn-secundario">← Volver a la Tabla</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/quiz-script.js"></script>
+</body>
+</html>

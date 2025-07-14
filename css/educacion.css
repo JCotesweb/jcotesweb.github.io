@@ -1,0 +1,176 @@
+.educacion-container {
+  display: flex;
+  gap: 2rem;
+  align-items: flex-start;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-bottom: 2rem;
+}
+
+.educacion-info {
+  flex: 2;
+  width: 70%;
+  min-width: 280px;
+}
+
+.educacion-info p {
+  font-size: 0.9rem;
+  font-style: italic;
+  margin: 0;
+}
+
+.educacion-botones {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  width: 20%;
+  min-width: 150px;
+  align-items: flex-start;
+}
+
+/* ESTILOS PARA EL ACORDEÓN DE EDUCACIÓN */
+.accordion-custom {
+  margin-bottom: 2rem;
+}
+
+.accordion-custom .accordion-item {
+  background-color: var(--color-accent3);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  margin-bottom: 0.5rem;
+  border-radius: 8px !important;
+  overflow: hidden;
+}
+
+.accordion-custom .accordion-item:last-of-type {
+  border-radius: 8px !important;
+}
+
+.accordion-custom .accordion-item:first-of-type {
+  border-radius: 8px !important;
+}
+
+.accordion-custom .accordion-header {
+  margin-bottom: 0;
+}
+
+.accordion-custom .accordion-button {
+  background-color: var(--color-bg);
+  color: white;
+  border: none;
+  padding: 0.5rem 1.25rem;
+  font-family: var(--font);
+  font-weight: 600;
+  border-radius: 8px !important;
+  box-shadow: none;
+  transition: all 0.3s ease;
+}
+
+.accordion-custom .accordion-button:not(.collapsed) {
+  background-color: transparent;
+  color: var(--color-bg);
+  box-shadow: none;
+}
+
+.accordion-custom .accordion-button:hover {
+  background-color: var(--color-accent2);
+  color: var(--color-bg);
+}
+
+.accordion-custom .accordion-button:focus {
+  box-shadow: 0 0 0 0.25rem rgba(30, 224, 161, 0.25);
+  border-color: var(--color-accent2);
+}
+
+.accordion-custom .accordion-button::after {
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23ffffff'%3e%3cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e");
+  transition: transform 0.3s ease;
+}
+
+.accordion-custom .accordion-button:not(.collapsed)::after {
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23251e47'%3e%3cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e");
+  transform: rotate(180deg);
+}
+
+.accordion-title {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  text-align: left;
+  width: 100%;
+}
+
+.accordion-title strong {
+  font-size: 1rem;
+  margin-bottom: 0.25rem;
+  line-height: 1.3;
+}
+
+.institution-year {
+  font-size: 0.85rem;
+  font-weight: 400;
+  opacity: 0.8;
+  font-style: italic;
+}
+
+.accordion-custom .accordion-collapse {
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.accordion-custom .accordion-body {
+  background-color: rgba(255, 255, 255, 0.05);
+  color: white;
+  padding: 1.25rem;
+  font-family: var(--font);
+}
+
+.accordion-custom .accordion-body p {
+  margin-bottom: 1rem;
+  line-height: 1.5;
+  font-size: 0.9rem;
+}
+
+.accordion-actions {
+  display: flex;
+  justify-content: flex-start;
+  margin-top: 1rem;
+}
+
+.accordion-actions .btn-base {
+  margin: 0;
+}
+
+/* ESTILOS PARA COLUMNAS DE EDUCACIÓN */
+.education-academic {
+  margin-bottom: 0;
+}
+
+.education-complementary {
+  margin-bottom: 0rem;
+}
+
+.education-complementary .row {
+  margin-left: -15px;
+  margin-right: -15px;
+}
+
+.education-complementary .col-md-6 {
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+
+.proceso ul{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: start;
+    align-items: center;
+}
+
+.proceso li{
+    width: 28%;
+    margin: 1rem 2rem;
+
+}

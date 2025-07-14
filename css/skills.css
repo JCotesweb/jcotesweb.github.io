@@ -1,0 +1,16 @@
+.tecno, .tools, .otros{
+    padding: 2rem;
+}
+.icons {
+  margin-top: 2rem;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-evenly;
+  gap: 1.5rem;
+}
+
+.icons img {
+  width: 60px;
+  height: auto;
+}

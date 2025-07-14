@@ -1,0 +1,467 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+  background-color: #000;
+  color: #fff;
+  background-color: rgb(19, 19, 156);
+  background-image: linear-gradient(
+    315deg,
+    rgb(19, 19, 156) 0%,
+    rgb(0, 0, 0) 74%
+  );
+  font-family: "Orbitron", sans-serif;
+  font-size: 1.2vw; /* Ajusta el tamaño de la fuente */
+}
+
+
+h1,
+h2 {
+  font-family: "Press Start 2P", system-ui;
+}
+
+
+
+header {
+  height: 5%;
+  padding: 1%;
+}
+header img {
+  width: 40%;
+  display: block;
+  margin: auto;
+  filter: drop-shadow(0 0 10px deeppink);
+}
+.barramenu {
+  margin-top: 2%;
+  padding: 1%; /* Añadido para dar espacio interno */
+}
+
+.barramenu ul {
+  width: 100%;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.barramenu a {
+  text-align: center;
+  width: 20vw;
+  display: block;
+  margin: auto;
+  text-decoration: none;
+  color: white;
+  background-color: deeppink;
+  border: 5px solid darkmagenta;
+  border-radius: 25px 0px 25px 0px;
+  padding: 8%; /* Padding en porcentaje para un diseño más flexible y responsive */
+  margin-bottom: 5%;
+  transition: background-color 0.3s ease, transform 0.2s ease; /* Transición para hover */
+}
+
+.barramenu a:hover {
+  background-color: darkmagenta; /* Efecto hover */
+  transform: scale(1.1); /* Efecto de escala */
+}
+
+
+.botonmenu {
+  font-size: 7vw;
+  margin-right: 1%;
+  background-color: transparent;
+  border: none;
+  color: var(--colorsecundario);
+  cursor: pointer;
+  z-index: 2;
+  -webkit-transition: all 0.5s ease;
+  -moz-transition: all 0.5s ease;
+  -ms-transition: all 0.5s ease;
+  -o-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+  display: none;
+}
+
+.menulateral {
+  background-color: rgba(0, 0, 0, 0.555);
+  width: 50%;
+  position: fixed;
+  height: 100%;
+  z-index: 1;
+  top: 0;
+  right: -50%;
+  padding: 5%;
+  -webkit-transition: all 1s ease;
+  -moz-transition: all 1s ease;
+  -ms-transition: all 1s ease;
+  -o-transition: all 1s ease;
+  transition: all 1s ease;
+  display: none;
+}
+
+.slidemenu {
+  right: 0;
+}
+
+.menulateral ul {
+  list-style: none;
+  padding: 0;
+  margin:40% 0;
+}
+
+
+.menulateral a {
+  text-decoration: none;
+  color: white;
+  text-align: center;
+  font-size: 2.5vw;
+  margin-top: 8%;
+  display: block;
+  width: 90%;
+  height: 7vw;
+  line-height: 6vw;
+    background-color: deeppink;
+  border: 5px solid darkmagenta;
+  border-radius: 25px 0px 25px 0px;
+  -webkit-transition: all 0.5s ease;
+  -moz-transition: all 0.5s ease;
+  -ms-transition: all 0.5s ease;
+  -o-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+}
+
+.menulateral i {
+  margin-right: 4%;
+  font-size: 2.5vw;
+}
+
+main {
+  width: 80%;
+  margin: auto;
+}
+
+main h1 {
+  text-align: center;
+  margin-bottom: 3%;
+  font-size: 2.5vw;
+}
+
+.cajaprincipal {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+}
+
+.cajatextos {
+  width: 48%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 2%;
+}
+.cajatextos ul {
+  margin: 1%;
+  color: white;
+  margin-bottom: 3%;
+}
+
+.cajatextos li {
+  margin-bottom: 2%;
+  line-height: 2;
+}
+
+.cajaimagen {
+  width: 48%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.cajaimagen img {
+  width: 60%;
+  margin: auto;
+  border-radius: 25px 0px 25px 0px;
+  border: 8px solid white;
+}
+
+.cuadricula {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.cuadricula h2 {
+  width: 100%;
+  text-align: center;
+  margin-bottom: 3%;
+  margin-top: 5%;
+  font-size: 2.5vw;
+}
+
+.cuadricula img {
+  width: 48%;
+  margin-bottom: 2%;
+  border-radius: 25px 0px 25px 0px;
+  border: 8px solid white;
+}
+
+.cuadricula p {
+  margin-top: 1%;
+}
+
+.botones {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
+  margin-top: 2%;
+}
+
+.botones h2 {
+  width: 100%;
+  text-align: center;
+  margin-bottom: 3%;
+}
+
+.botones img {
+  width: 100%;
+  margin-bottom: 2%;
+  border-radius: 25px 0px 25px 0px;
+  border: 8px solid white;
+}
+
+.botones a {
+  text-align: center;
+  width: 30vw;
+  display: block;
+  margin: auto;
+  text-decoration: none;
+  color: white;
+  background-color: deeppink;
+  border: 5px solid darkmagenta;
+  border-radius: 25px 0px 25px 0px;
+  padding: 2%; /* Padding en porcentaje para un diseño más flexible y responsive */
+  margin-top: 2%;
+  margin-bottom: 2%;
+  transition: background-color 0.3s ease, transform 0.2s ease; /* Transición para hover */
+}
+
+.botones a:hover {
+  background-color: darkmagenta; /* Efecto hover */
+  transform: scale(1.1); /* Efecto de escala */
+}
+.desarrollo {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
+}
+.desarrollo p {
+  width: 100%;
+  text-align: center;
+}
+.desarrollo img {
+  width: 20%;
+}
+
+footer {
+  background-color: black;
+  height: 30vh;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  margin-top: 2%;
+  padding: 2%;
+}
+
+.linea1 {
+  width: 70%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.linea1 a {
+  width: 35%;
+  text-decoration: none;
+  color: white;
+  text-align: center;
+  font-size: 1vw;
+  margin-bottom: 3%;
+}
+
+.redes {
+  display: flex;
+  width: 80%;
+  justify-content: space-evenly;
+  align-items: center;
+  font-size: 2.5vw;
+  margin-bottom: 2%;
+}
+
+.copyright {
+  text-align: center;
+  font-size: 1vw;
+  color: white;
+}
+
+@media (max-width: 1280px) {
+  body {
+    font-size: 2vw; /* Ajusta el tamaño de la fuente */
+  }
+   header{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  header img {
+    margin-left: 2%;
+    width: 60%;
+  }
+  .barramenu{
+    display: none;
+  }
+
+  .menulateral{
+    display: block;
+  }
+
+  .botonmenu{
+    display: block;
+  }
+
+main h1 {
+
+  font-size: 3vw;
+}
+
+  .cajatextos {
+    width: 100%;
+    order: 2;
+  }
+  .cajaimagen {
+    width: 100%;
+    order: 1;
+  }
+  .cuadricula img {
+    width: 100%;
+  }
+  .botones img {
+    width: 100%;
+  }
+  .botones a {
+    width: 90%;
+    margin-bottom: 5%;
+  }
+  nav a {
+    height: 10vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .linea1 a {
+    font-size: 1.5vw;
+  }
+  .copyright {
+    font-size: 1.5vw;
+  }
+}
+
+@media (max-width: 768px) {
+  body {
+    font-size: 3vw;
+  }
+    header{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  header img {
+    width: 70%;
+    margin: 0;
+  }
+  .barramenu{
+    display: none;
+  }
+
+  .menulateral{
+    display: block;
+  }
+
+  .botonmenu{
+    display: block;
+  }
+
+  main h1 {
+    font-size: 3.5vw;
+    width: 100%;
+  }
+
+  .cajatextos {
+    width: 100%;
+    order: 2;
+  }
+
+  .cajatextos h2 {
+    font-size: 3vw; /* Aumenta el tamaño de la fuente */
+  }
+  .cajaimagen {
+    width: 100%;
+    order: 1;
+  }
+  .cuadricula img {
+    width: 100%;
+  }
+  .cuadricula p {
+    text-align: center;
+  }
+  .botones img {
+    width: 100%;
+  }
+  .botones a {
+    width: 90%;
+    margin-bottom: 5%;
+  }
+
+  .desarrollo img {
+    width: 40%;
+  }
+  footer {
+    height: auto; /* Ajusta la altura automáticamente */
+    flex-direction: column; /* Organiza el footer en columna */
+    text-align: center; /* Centra el texto */
+    font-size: 2.5vw; /* Aumenta el tamaño de fuente */
+  }
+  .linea1 {
+    display: flex;
+    flex-direction: column;
+    width: 100%; /* Asegura que ocupe todo el ancho */
+    margin-bottom: 2%; /* Espaciado entre secciones */
+  }
+  .linea1 a {
+    width: 80%; /* Ajusta el ancho de los enlaces */
+    font-size: 2.5vw; /* Aumenta el tamaño de fuente */
+  }
+  .redes {
+    flex-direction: row; /* Organiza las redes sociales en columna */
+    font-size: 5vw; /* Aumenta el tamaño de los iconos */
+    margin-bottom: 2%;
+  }
+  .copyright {
+    font-size: 2vw; /* Aumenta el tamaño del texto */
+    margin-top: 2%; /* Espaciado superior */
+  }
+}
+

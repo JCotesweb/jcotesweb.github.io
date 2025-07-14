@@ -1,0 +1,192 @@
+/*PANTALLAS PEQUEÑAS*/
+
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+  }
+
+  .sidebar {
+    position: static;
+    width: 100%;
+    flex-direction: row;
+    justify-content: space-around;
+    height: auto;
+  }
+
+  .content {
+    margin-left: 0;
+    padding: 1rem;
+  }
+
+  .logo .placeholder-img {
+    width: 60px;
+    height: 60px;
+  }
+
+  .menu {
+    flex-direction: row;
+    gap: 0.5rem;
+  }
+
+  .menu a {
+    font-size: 0.9rem;
+    padding: 0.3rem;
+  }
+}
+
+/* MEDIA QUERIES PARA RESPONSIVE - GALERÍA 4 COLUMNAS */
+@media (max-width: 1400px) {
+  /* En pantallas menores a 1400px: 3 columnas */
+  .col-xl-3 {
+    flex: 0 0 33.333333%;
+    max-width: 33.333333%;
+  }
+}
+@media (max-width: 1200px) {
+  /* Ajustes para pantallas grandes */
+  .gallery-item img {
+    height: 200px;
+  }
+  
+  .project-overlay h4 {
+    font-size: 1.05rem;
+  }
+  
+  .project-overlay p {
+    font-size: 0.9rem;
+  }
+  
+  .tech-tag {
+    font-size: 0.7rem;
+    padding: 0.2rem 0.45rem;
+  }
+}
+
+@media (max-width: 992px) {
+  /* En pantallas menores a 992px: 2 columnas */
+  .gallery-item img {
+    height: 200px;
+  }
+  
+  .project-overlay h4 {
+    font-size: 1.1rem;
+  }
+  
+  .project-overlay p {
+    font-size: 0.9rem;
+  }
+  
+  .tech-tag {
+    font-size: 0.7rem;
+    padding: 0.2rem 0.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  /* En pantallas menores a 768px: 1 columna */
+  .sidebar {
+    transform: translateX(-100%);
+    transition: transform 0.3s ease;
+  }
+  
+  .sidebar.active {
+    transform: translateX(0);
+  }
+  
+  .content {
+    margin-left: 0;
+    width: 100%;
+  }
+  
+  .gallery-item img {
+    height: 250px;
+  }
+  
+  .project-overlay h4 {
+    font-size: 1.2rem;
+  }
+  
+  .project-overlay p {
+    font-size: 0.95rem;
+  }
+  
+  .tech-tag {
+    font-size: 0.75rem;
+    padding: 0.25rem 0.6rem;
+  }
+  
+  .social {
+    width: 100%;
+    max-width: 400px;
+  }
+  
+  h1 {
+    font-size: 2.5rem;
+  }
+  
+  h2 {
+    font-size: 2rem;
+  }
+  
+  /* Responsive para acordeón */
+  .accordion-custom .accordion-button {
+    padding: 0.75rem 1rem;
+  }
+  
+  .accordion-title strong {
+    font-size: 0.9rem;
+  }
+  
+  .institution-year {
+    font-size: 0.8rem;
+  }
+  
+  .accordion-custom .accordion-body {
+    padding: 1rem;
+  }
+  
+  .accordion-custom .accordion-body p {
+    font-size: 0.85rem;
+  }
+  
+  /* Responsive para las columnas de educación */
+  .education-complementary .col-md-6 {
+    margin-bottom: 1rem;
+  }
+  
+  .education-complementary .col-md-6:last-child {
+    margin-bottom: 0;
+  }
+}
+
+/* FORZAR 4 COLUMNAS EN PANTALLAS MUY GRANDES */
+@media (min-width: 1200px) {
+  .portfolio-gallery .col-xl-3 {
+    flex: 0 0 25%;
+    max-width: 25%;
+  }
+}
+
+/* Ajuste de altura para que las columnas se vean equilibradas */
+@media (min-width: 769px) {
+  .education-complementary .col-md-6 {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .education-complementary .accordion {
+    flex: 1;
+  }
+}
+
+/* Animación suave para el acordeón */
+.accordion-custom .accordion-collapse {
+  transition: all 0.3s ease;
+}
+
+/* Hover effect para items del acordeón */
+.accordion-custom .accordion-item:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+}

@@ -1,0 +1,58 @@
+/*ESTILOS DE LA SECCIÓN CONTACTO*/
+
+.contacto-cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  align-items: center;
+  margin-top: 3%;
+  gap: 2rem;
+}
+
+.card {
+  width: 300px;
+  height: 300px;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 12px;
+  overflow: hidden;
+  background: var(--color-accent3);
+  transition: all 0.3s;
+}
+
+.card:hover {
+  background-color: var(--color-accent2);
+  color: var(--color-bg);
+}
+
+.card-image {
+   flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2% 0 1% 0;
+}
+
+.card-image img {
+   width: 80px;
+  height: 80px;
+  object-fit: cover;
+  display: block;
+filter: drop-shadow(0 0 5px white);
+}
+
+.card-content {
+  flex: 1;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+}
+
+.card-content a {
+  color: var(--color-accent4);
+  text-decoration: none;
+  word-break: break-all;
+}

@@ -1,0 +1,204 @@
+@import url(media.css);
+@import url(skills.css);
+@import url(educacion.css);
+@import url(portfolio.css);
+@import url(contacto.css);
+
+
+/*ESTILOS GENERALES*/
+
+:root {
+  --color-bg: #251e47;
+  --color-accent1: #e085bc;
+  --color-accent2: #1ee0a1;
+  --color-accent3: #2e53b0;
+  --color-accent4: #00a6cb;
+  --font: "Fira Code", monospace;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font);
+  background-color: var(--color-bg);
+  color: white;
+}
+
+.container {
+  display: flex;
+  min-height: 100vh;
+  max-width: none !important; /* Anula el max-width de Bootstrap */
+  padding: 0 !important; /* Anula el padding de Bootstrap */
+  margin: 0 !important; /* Anula el margin de Bootstrap */
+}
+
+.sidebar {
+  width: 250px;
+  background-color: var(--color-accent3);
+  padding: 2rem 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  height: 100vh;
+  left: 0; 
+  top: 0; 
+  z-index: 1000; 
+}
+
+.logo .placeholder-img {
+  width: 120px;
+  height: 120px;
+  background-color: var(--color-accent1);
+  border-radius: 50%;
+  margin-bottom: 2rem;
+  border: var(--color-accent1) 3px solid;
+}
+
+.menu {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  width: 100%;
+}
+
+.menu a {
+  color: white;
+  text-decoration: none;
+  text-align: center;
+  padding: 0.5rem;
+  border-radius: 4px;
+  transition: all 0.3s;
+}
+
+.menu a:hover {
+  background-color: var(--color-accent2);
+  color: var(--color-bg);
+}
+
+.menu a.active {
+  background-color: var(--color-accent1);
+  color: var(--color-bg);
+}
+
+
+.content {
+  margin-left: 250px;
+  padding: 0 5%;
+  flex: 1;
+  scroll-behavior: smooth;
+  width: calc(100% - 250px); /* Asegura que ocupa el resto del ancho */
+}
+
+section {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-bottom: 5rem;
+}
+
+h1 {
+  color: var(--color-accent1);
+  font-size: 4rem;
+  text-transform: uppercase;
+  margin: 2% 0;
+}
+
+h2 {
+  color: var(--color-accent2);
+  font-size: 3rem;
+  margin: 1.5% 0;
+}
+
+h3 {
+  color: var(--color-accent4);
+  font-size: 1.5rem;
+  margin: 1% 0;
+}
+
+p {
+  margin: 1rem 0;
+}
+
+.link {
+  text-decoration: none;
+  color: var(--color-accent1);
+}
+
+hr {
+  margin: 1rem 0;
+}
+
+.social {
+  width: 400px;
+  display: flex;
+  justify-content: space-around;
+  gap: 1vw;
+  align-items: center;
+  margin: 1rem 0;
+}
+
+.social img {
+  width: 50px;
+  height: auto;
+  transition: transform 0.2s;
+}
+
+.social img:hover {
+  transform: scale(1.15);
+  filter: drop-shadow(0 0 5px white);
+}
+
+/* Base de botones */
+.btn-base {
+  background-color: var(--color-accent2);
+  color: var(--color-bg);
+  font-weight: 600;
+  font-size: 1rem;
+  text-align: center;
+  padding: 0.5rem;
+  border-radius: 4px;
+  border: none;
+  transition: all 0.3s;
+  cursor: pointer;
+    width: 200px;
+  max-width: 100%;
+  margin: 1% 0;
+}
+
+.btn-base:hover {
+  background-color: var(--color-accent1);
+  color: white;
+}
+
+.footer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: start;
+  align-items: center;
+  padding: 2% 0;
+  margin-top: 0;
+  gap: 1rem;
+}
+
+.footer img {
+  width: 40px;
+  height: 40px;
+  margin: 0;
+}
+
+.footer p {
+  width: 100%;
+  text-align: start;
+  margin-top: 1rem;
+  font-size: 0.8rem;
+}
+
+
+
