@@ -45,9 +45,9 @@ body {
   justify-content: center;
   position: fixed;
   height: 100vh;
-  left: 0; 
-  top: 0; 
-  z-index: 1000; 
+  left: 0;
+  top: 0;
+  z-index: 1000;
 }
 
 .logo .placeholder-img {
@@ -84,7 +84,6 @@ body {
   background-color: var(--color-accent1);
   color: var(--color-bg);
 }
-
 
 .content {
   margin-left: 250px;
@@ -166,7 +165,7 @@ hr {
   border: none;
   transition: all 0.3s;
   cursor: pointer;
-    width: 200px;
+  width: 200px;
   max-width: 100%;
   margin: 1% 0;
 }
@@ -349,7 +348,7 @@ hr {
     width: 100% !important;
     scroll-behavior: auto !important;
   }
-  
+
   .footer {
     flex-direction: column !important;
     text-align: center !important;
@@ -357,7 +356,7 @@ hr {
     padding: 2rem 1rem !important;
     align-items: center !important;
   }
-  
+
   .footer h3 {
     order: 1;
     width: 100% !important;
@@ -365,7 +364,7 @@ hr {
     font-size: 1.1rem !important;
     color: var(--color-accent4) !important;
   }
-  
+
   .footer .footer-images {
     order: 2;
     display: flex !important;
@@ -375,17 +374,17 @@ hr {
     margin: 0 !important;
     flex-wrap: wrap !important;
   }
-  
+
   .footer img {
     width: 35px !important;
     height: 35px !important;
     transition: transform 0.2s ease !important;
   }
-  
+
   .footer img:hover {
     transform: scale(1.1) !important;
   }
-  
+
   .footer p {
     order: 3;
     width: 100% !important;
@@ -394,24 +393,24 @@ hr {
     font-size: 0.9rem !important;
     color: #ccc !important;
   }
-  
+
   .social img:hover {
     transform: none !important;
     filter: none !important;
   }
-  
+
   .btn-base:hover {
     transform: none !important;
   }
-  
+
   .mobile-menu .mobile-nav a:hover {
     transform: none !important;
   }
-  
+
   * {
     transition: none !important;
   }
-  
+
   .hamburger-btn,
   .hamburger-btn span,
   .mobile-menu,
@@ -436,19 +435,16 @@ hr {
   html {
     scroll-behavior: auto !important;
   }
-  
+
   * {
     will-change: auto !important;
   }
-  
+
   .hamburger-btn.active span:nth-child(1) {
     transform: rotate(45deg) translate(8px, 8px) !important;
   }
-  
+
   .hamburger-btn.active span:nth-child(3) {
     transform: rotate(-45deg) translate(8px, -8px) !important;
   }
 }
-
-
-

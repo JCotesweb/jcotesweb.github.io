@@ -1,343 +1,532 @@
-/* ============================================
-   MEDIA QUERIES RESPONSIVE - REEMPLAZAR media.css
-   ============================================ */
-
-/* ============================================
-   TABLET - 768px
-   ============================================ */
+/*TABLET - 768px*/
 @media (max-width: 767px) {
-  
-
   .hamburger-btn {
     display: block;
   }
-  
+
   .sidebar {
     display: none;
   }
-  
+
   .content {
     margin-left: 0;
     width: 100%;
     padding: 1rem 3%;
   }
-  
+
+  /* Avatar más grande en tablets */
+  .logo .placeholder-img {
+    width: 150px;
+    height: 150px;
+  }
 
   #home h1 {
     font-size: 3rem;
   }
-  
+
   #home h2 {
     font-size: 2.2rem;
   }
-  
+
   .social {
     width: 100%;
     max-width: 350px;
   }
-  
+
   .social img {
     width: 45px;
   }
-  
+
   .btn-base {
     width: 250px;
   }
-  
 
   #sobre-mi h2 {
     font-size: 2.2rem;
     margin: 1rem 0;
   }
-  
+
   #sobre-mi p {
     margin: 0.7rem 0;
   }
-  
+
   #sobre-mi h3 {
     font-size: 1.3rem;
     margin: 0.7rem 0;
   }
-  
 
   .portfolio-gallery .col-xl-3 {
     flex: 0 0 50%;
     max-width: 50%;
   }
-  
+
   .gallery-item img {
     height: 180px;
   }
-  
+
   .project-overlay {
     position: static;
     transform: translateY(0);
-    background: linear-gradient(135deg, rgba(37, 30, 71, 0.9), rgba(46, 83, 176, 0.8));
+    background: linear-gradient(
+      135deg,
+      rgba(37, 30, 71, 0.9),
+      rgba(46, 83, 176, 0.8)
+    );
     padding: 1rem;
   }
-  
 
   #educacion h2 {
     font-size: 2.2rem;
   }
-  
+
   .accordion-custom .accordion-button {
     padding: 0.6rem 1rem;
   }
-  
+
   .accordion-title strong {
     font-size: 0.9rem;
   }
-  
+
   .institution-year {
     font-size: 0.8rem;
   }
-  
+
   .accordion-custom .accordion-body {
     padding: 1rem;
   }
-  
+
   .proceso ul {
     flex-direction: column;
     align-items: flex-start;
   }
-  
+
   .proceso li {
     width: 100%;
     margin: 0.5rem 0;
   }
-  
 
   #skills h2 {
     font-size: 2.2rem;
   }
-  
+
   .icons img {
     width: 50px;
   }
-  
+
   .icons {
     gap: 1rem;
   }
-  
 
   .contacto-cards {
     gap: 1.5rem;
   }
-  
+
   .card {
     width: 250px;
     height: 250px;
   }
-  
+
   .card-image img {
     width: 65px;
     height: 65px;
   }
 }
 
-/* ============================================
-   MÓVIL - 480px
-   ============================================ */
+/*MÓVIL - 480px*/
 @media (max-width: 479px) {
-  
   .content {
     padding: 1rem 2%;
   }
-  
+
+  /* Avatar más grande en móviles */
+  .logo .placeholder-img {
+    width: 140px;
+    height: 140px;
+  }
 
   #home h1 {
     font-size: 2.2rem;
   }
-  
+
   #home h2 {
     font-size: 1.8rem;
   }
-  
+
   .social {
     width: 100%;
     max-width: 300px;
     justify-content: space-around;
   }
-  
+
   .social img {
     width: 40px;
   }
-  
+
   .btn-base {
     width: 100%;
     max-width: 100%;
   }
-  
 
   #sobre-mi h2 {
     font-size: 1.8rem;
   }
-  
+
   #sobre-mi p {
     margin: 0.5rem 0;
     font-size: 0.9rem;
   }
-  
+
   #sobre-mi h3 {
     font-size: 1.1rem;
   }
-  
 
   .portfolio-gallery .col-xl-3 {
     flex: 0 0 100%;
     max-width: 100%;
   }
-  
+
   .gallery-item img {
     height: 200px;
   }
-  
+
   .project-overlay h4 {
     font-size: 1rem;
   }
-  
+
   .project-overlay p {
     font-size: 0.85rem;
   }
-  
+
   .tech-tag {
     font-size: 0.7rem;
     padding: 0.2rem 0.4rem;
   }
-  
 
   #educacion h2 {
     font-size: 1.8rem;
   }
-  
+
   .education-complementary .col-md-6 {
     margin-bottom: 1.5rem;
   }
-  
+
   .accordion-custom .accordion-button {
     padding: 0.5rem 0.8rem;
   }
-  
+
   .accordion-title strong {
     font-size: 0.85rem;
   }
-  
+
   .institution-year {
     font-size: 0.75rem;
   }
-  
+
   .accordion-custom .accordion-body {
     padding: 0.8rem;
   }
-  
+
   .accordion-custom .accordion-body p {
     font-size: 0.85rem;
   }
-  
 
   #skills h2 {
     font-size: 1.8rem;
   }
-  
+
   .icons {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 0.8rem;
     justify-items: center;
   }
-  
+
   .icons img {
     width: 45px;
   }
-  
 
   .contacto-cards {
     flex-direction: column;
     align-items: center;
     gap: 1rem;
   }
-  
+
   .card {
     width: 100%;
     max-width: 280px;
     height: 220px;
   }
-  
+
   .card-image img {
     width: 55px;
     height: 55px;
   }
-  
+
   .card-content h4 {
     font-size: 1rem;
   }
-  
+
   .card-content p {
     font-size: 0.85rem;
   }
-  
 
   h3 {
     font-size: 1.1rem;
   }
-  
+
   .footer h3 {
     font-size: 1.1rem;
     text-align: center;
   }
-  
+
   .footer {
     text-align: center;
     justify-content: center;
   }
-  
+
   .footer img {
     width: 35px;
     height: 35px;
   }
-  
+
   .footer p {
     text-align: center;
     font-size: 0.8rem;
   }
 }
 
-/* ============================================
-   AJUSTES PARA MODALES EN RESPONSIVE
-   ============================================ */
+/*AJUSTES PARA MODALES EN RESPONSIVE*/
+
+/* Estructura base para el contenido del carousel */
+.carousel-content-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  padding: 1rem;
+}
+
+.carousel-image-with-caption {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 100%;
+}
+
+.carousel-image-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 0;
+}
+
+.carousel-image-container img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+.carousel-caption {
+  position: static;
+  width: 100%;
+  margin: 0;
+  padding: 1rem;
+  text-align: left;
+}
+
 @media (max-width: 767px) {
   .modal-xl {
-    max-width: 95vw;
+    max-width: 100vw;
+    margin: 0;
   }
-  
-  .carousel-item img {
-    max-height: 60vh;
+
+  .modal-dialog {
+    margin: 0;
+    max-width: 100%;
+    height: 100vh;
   }
-  
-  .carousel-caption {
+
+  .modal-content {
+    height: 100vh;
+    border-radius: 0;
+  }
+
+  .carousel-content-wrapper {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
     padding: 1rem;
-    bottom: 10px;
-    left: 10px;
-    right: 10px;
+    overflow-y: auto;
+  }
+
+  .carousel-image-with-caption {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .carousel-image-container {
+    flex-shrink: 0;
+    margin-bottom: 1rem;
+    max-height: 60vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+  }
+
+  .carousel-image-container img {
+    max-height: 60vh;
+    max-width: 90%;
+    width: auto;
+    object-fit: contain;
+  }
+
+  .carousel-caption {
+    position: static;
+    width: 90%;
+    max-width: 90%;
+    padding: 1rem;
+    margin: 0;
+    background-color: rgba(37, 30, 71, 0.9);
+    border-radius: 8px;
+  }
+
+  .carousel-caption h5 {
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .carousel-caption p {
+    font-size: 0.85rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .carousel-caption .tech-tags {
+    gap: 0.3rem;
+    margin: 0.5rem 0;
+  }
+
+  .carousel-caption .tech-tag {
+    font-size: 0.6rem;
+    padding: 0.1rem 0.3rem;
+  }
+}
+
+/* Media query específica para tablets */
+@media (min-width: 768px) and (max-width: 991px) {
+  .carousel-content-wrapper {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 1rem;
+    overflow-y: auto;
+  }
+
+  .carousel-image-with-caption {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .carousel-image-container {
+    flex-shrink: 0;
+    margin-bottom: 1rem;
+    max-height: 70vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+  }
+
+  .carousel-image-container img {
+    max-height: 70vh;
+    max-width: 85%;
+    width: auto;
+    object-fit: contain;
+  }
+
+  .carousel-caption {
+    position: static;
+    width: 85%;
+    max-width: 85%;
+    padding: 1.2rem;
+    margin: 0;
+    background-color: rgba(37, 30, 71, 0.9);
+    border-radius: 8px;
   }
 }
 
 @media (max-width: 479px) {
   .modal-xl {
-    max-width: 98vw;
-    margin: 0.5rem;
+    max-width: 100vw;
+    margin: 0;
   }
-  
-  .carousel-item img {
+
+  .carousel-content-wrapper {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 0.8rem;
+    overflow-y: auto;
+  }
+
+  .carousel-image-with-caption {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .carousel-image-container {
+    flex-shrink: 0;
+    margin-bottom: 1rem;
     max-height: 50vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
   }
-  
+
+  .carousel-image-container img {
+    max-height: 50vh;
+    max-width: 95%;
+    width: auto;
+    object-fit: contain;
+  }
+
+  .carousel-caption {
+    position: static;
+    width: 95%;
+    max-width: 95%;
+    padding: 0.8rem;
+    margin: 0;
+    background-color: rgba(37, 30, 71, 0.9);
+    border-radius: 8px;
+  }
+
   .carousel-caption h5 {
     font-size: 1rem;
   }
-  
+
   .carousel-caption p {
     font-size: 0.8rem;
+  }
+
+  .carousel-caption .btn {
+    font-size: 0.75rem;
+    padding: 0.4rem 0.8rem;
   }
 }

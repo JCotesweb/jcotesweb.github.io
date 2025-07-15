@@ -29,7 +29,6 @@
   align-items: flex-start;
 }
 
-
 .accordion-custom {
   margin-bottom: 2rem;
 }
@@ -140,7 +139,6 @@
   margin: 0;
 }
 
-
 .education-academic {
   margin-bottom: 0;
 }
@@ -159,18 +157,16 @@
   padding-right: 15px;
 }
 
-
-.proceso ul{
-    width: 100%;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: start;
-    align-items: center;
+.proceso ul {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: start;
+  align-items: center;
 }
 
-.proceso li{
-    width: 28%;
-    margin: 1rem 2rem;
-
+.proceso li {
+  width: 28%;
+  margin: 1rem 2rem;
 }

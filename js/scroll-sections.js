@@ -1,62 +1,71 @@
-document.addEventListener('DOMContentLoaded', () => {
-    const isMobile = window.innerWidth <= 768 || /Android|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
-    
-    if (isMobile) {
-        return;
-    }
+document.addEventListener("DOMContentLoaded", () => {
+  const isMobile =
+    window.innerWidth <= 768 ||
+    /Android|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
+      navigator.userAgent
+    );
 
-    const sections = Array.from(document.querySelectorAll('section'));
-    let currentSectionIndex = 0;
-    let isScrolling = false;
-    const scrollThrottleTime = 1000;
+  if (isMobile) {
+    return;
+  }
 
-    function scrollToSection(index) {
-        if (index < 0 || index >= sections.length) return;
+  const sections = Array.from(document.querySelectorAll("section"));
+  let currentSectionIndex = 0;
+  let isScrolling = false;
+  const scrollThrottleTime = 1000;
 
-        isScrolling = true;
-        currentSectionIndex = index;
-        const targetSection = sections[currentSectionIndex];
+  function scrollToSection(index) {
+    if (index < 0 || index >= sections.length) return;
 
-        const sectionHeight = targetSection.offsetHeight;
-        const viewportHeight = window.innerHeight;
+    isScrolling = true;
+    currentSectionIndex = index;
+    const targetSection = sections[currentSectionIndex];
 
-        const scrollPosition = targetSection.offsetTop - (viewportHeight / 2) + (sectionHeight / 2);
+    const sectionHeight = targetSection.offsetHeight;
+    const viewportHeight = window.innerHeight;
 
-        window.scrollTo({
-            top: scrollPosition,
-            behavior: 'smooth'
-        });
+    const scrollPosition =
+      targetSection.offsetTop - viewportHeight / 2 + sectionHeight / 2;
 
-        setTimeout(() => {
-            isScrolling = false;
-        }, scrollThrottleTime);
-    }
-
-    scrollToSection(0);
-
-    window.addEventListener('wheel', (event) => {
-        if (isScrolling) return;
-
-        if (event.deltaY > 0) {
-            scrollToSection(currentSectionIndex + 1);
-        } else if (event.deltaY < 0) {
-            scrollToSection(currentSectionIndex - 1);
-        }
-    }, { passive: false });
-
-    window.addEventListener('keydown', (event) => {
-        if (isScrolling) return;
-
-        if (event.key === 'ArrowDown') {
-            event.preventDefault();
-            scrollToSection(currentSectionIndex + 1);
-        } else if (event.key === 'ArrowUp') {
-            event.preventDefault();
-            scrollToSection(currentSectionIndex - 1);
-        }
+    window.scrollTo({
+      top: scrollPosition,
+      behavior: "smooth",
     });
 
-    window.addEventListener('resize', () => {
-        scrollToSection(currentSectionIndex);
-    });
+    setTimeout(() => {
+      isScrolling = false;
+    }, scrollThrottleTime);
+  }
+
+  scrollToSection(0);
+
+  window.addEventListener(
+    "wheel",
+    (event) => {
+      if (isScrolling) return;
+
+      if (event.deltaY > 0) {
+        scrollToSection(currentSectionIndex + 1);
+      } else if (event.deltaY < 0) {
+        scrollToSection(currentSectionIndex - 1);
+      }
+    },
+    { passive: false }
+  );
+
+  window.addEventListener("keydown", (event) => {
+    if (isScrolling) return;
+
+    if (event.key === "ArrowDown") {
+      event.preventDefault();
+      scrollToSection(currentSectionIndex + 1);
+    } else if (event.key === "ArrowUp") {
+      event.preventDefault();
+      scrollToSection(currentSectionIndex - 1);
+    }
+  });
+
+  window.addEventListener("resize", () => {
+    scrollToSection(currentSectionIndex);
+  });
 });

@@ -61,7 +61,7 @@
   font-size: 1rem; /* Tamaño optimizado para 4 columnas */
   margin-bottom: 0.5rem;
   background-color: var(--color-accent1);
-    border-radius: 5px;
+  border-radius: 5px;
   color: var(--color-bg);
   line-height: 1.2;
 }
@@ -95,10 +95,10 @@
 
 .carousel-item img {
   max-height: 80vh;
-  width: auto;
+  width: 100%;
   margin: auto;
   display: block;
-  object-fit: contain;
+  object-fit: cover;
 }
 
 .carousel-control-prev,
@@ -110,10 +110,15 @@
   background-color: rgba(37, 30, 71, 0.9);
   padding: 1.5rem;
   border-radius: 8px;
-  bottom: 20px;
-  left: 20px;
-  right: 20px;
+  position: absolute;
+  bottom: 50%;
+  left: 50%;
+  right: auto;
   margin: 0;
+  transform: translate(-50%, 50%);
+  max-width: 90%;
+  width: auto;
+  min-width: 300px;
 }
 
 .carousel-caption h5 {
@@ -141,4 +146,23 @@
 
 .btn-close {
   filter: invert(1);
+}
+
+/* Media queries para escritorio */
+@media (min-width: 768px) {
+  .carousel-caption {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    right: 20px;
+    transform: none;
+    max-width: none;
+    min-width: auto;
+    width: auto;
+  }
+
+  .carousel-item img {
+    width: auto;
+    object-fit: contain;
+  }
 }
