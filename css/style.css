@@ -222,6 +222,22 @@ hr {
   height: auto;
 }
 
+/* Avatar móvil en la sección home */
+.mobile-avatar-home {
+  display: none;
+  text-align: left;
+  margin-bottom: 1rem;
+  margin-top: -1rem;
+}
+
+.mobile-avatar-home img {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  border: 3px solid var(--color-accent1);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
 .hamburger-btn:hover {
   background: var(--color-accent2);
   transform: scale(1.05);
@@ -290,17 +306,6 @@ hr {
   transform: translateY(0);
 }
 
-.mobile-menu .mobile-logo {
-  margin-bottom: 3rem;
-}
-
-.mobile-menu .mobile-logo img {
-  width: 80px;
-  height: 80px;
-  border-radius: 50%;
-  border: 3px solid var(--color-accent1);
-}
-
 .mobile-menu .mobile-nav {
   display: flex;
   flex-direction: column;
@@ -337,6 +342,15 @@ hr {
     display: block !important;
     visibility: visible !important;
     opacity: 1 !important;
+  }
+
+  .mobile-avatar-home {
+    display: block !important;
+  }
+
+  .mobile-avatar-home img {
+    width: 140px;
+    height: 140px;
   }
 
   .sidebar {

@@ -1,5 +1,10 @@
 /*TABLET - 768px*/
 @media (max-width: 767px) {
+  /* Aumento general del tamaño de fuente para tablets */
+  body {
+    font-size: 1.1rem;
+  }
+
   .hamburger-btn {
     display: block;
   }
@@ -42,16 +47,17 @@
   }
 
   #sobre-mi h2 {
-    font-size: 2.2rem;
+    font-size: 2.4rem;
     margin: 1rem 0;
   }
 
   #sobre-mi p {
     margin: 0.7rem 0;
+    font-size: 1.1rem;
   }
 
   #sobre-mi h3 {
-    font-size: 1.3rem;
+    font-size: 1.5rem;
     margin: 0.7rem 0;
   }
 
@@ -76,7 +82,7 @@
   }
 
   #educacion h2 {
-    font-size: 2.2rem;
+    font-size: 2.4rem;
   }
 
   .accordion-custom .accordion-button {
@@ -84,15 +90,19 @@
   }
 
   .accordion-title strong {
-    font-size: 0.9rem;
+    font-size: 1rem;
   }
 
   .institution-year {
-    font-size: 0.8rem;
+    font-size: 0.9rem;
   }
 
   .accordion-custom .accordion-body {
     padding: 1rem;
+  }
+
+  .accordion-custom .accordion-body p {
+    font-size: 1rem;
   }
 
   .proceso ul {
@@ -103,10 +113,11 @@
   .proceso li {
     width: 100%;
     margin: 0.5rem 0;
+    font-size: 1.1rem;
   }
 
   #skills h2 {
-    font-size: 2.2rem;
+    font-size: 2.4rem;
   }
 
   .icons img {
@@ -134,6 +145,11 @@
 
 /*MÓVIL - 480px*/
 @media (max-width: 479px) {
+  /* Aumento general del tamaño de fuente para móviles */
+  body {
+    font-size: 1.05rem;
+  }
+
   .content {
     padding: 1rem 2%;
   }
@@ -168,16 +184,16 @@
   }
 
   #sobre-mi h2 {
-    font-size: 1.8rem;
+    font-size: 2rem;
   }
 
   #sobre-mi p {
     margin: 0.5rem 0;
-    font-size: 0.9rem;
+    font-size: 1rem;
   }
 
   #sobre-mi h3 {
-    font-size: 1.1rem;
+    font-size: 1.3rem;
   }
 
   .portfolio-gallery .col-xl-3 {
@@ -203,7 +219,7 @@
   }
 
   #educacion h2 {
-    font-size: 1.8rem;
+    font-size: 2rem;
   }
 
   .education-complementary .col-md-6 {
@@ -215,11 +231,11 @@
   }
 
   .accordion-title strong {
-    font-size: 0.85rem;
+    font-size: 0.95rem;
   }
 
   .institution-year {
-    font-size: 0.75rem;
+    font-size: 0.85rem;
   }
 
   .accordion-custom .accordion-body {
@@ -227,11 +243,11 @@
   }
 
   .accordion-custom .accordion-body p {
-    font-size: 0.85rem;
+    font-size: 0.95rem;
   }
 
   #skills h2 {
-    font-size: 1.8rem;
+    font-size: 2rem;
   }
 
   .icons {
@@ -263,19 +279,19 @@
   }
 
   .card-content h4 {
-    font-size: 1rem;
+    font-size: 1.1rem;
   }
 
   .card-content p {
-    font-size: 0.85rem;
+    font-size: 0.95rem;
   }
 
   h3 {
-    font-size: 1.1rem;
+    font-size: 1.3rem;
   }
 
   .footer h3 {
-    font-size: 1.1rem;
+    font-size: 1.3rem;
     text-align: center;
   }
 
@@ -291,7 +307,7 @@
 
   .footer p {
     text-align: center;
-    font-size: 0.8rem;
+    font-size: 0.9rem;
   }
 }
 
