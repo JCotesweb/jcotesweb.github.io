@@ -14,3 +14,23 @@
   width: 60px;
   height: auto;
 }
+
+@media screen and (max-width: 768px) {
+  .otros .row {
+    margin: 0 !important;
+    gap: 0 !important;
+  }
+  
+  .otros .col-md-6 {
+    padding: 0 !important;
+    margin-bottom: 0 !important;
+  }
+  
+  .otros .col-md-6 p {
+    margin-bottom: 0.5rem !important;
+  }
+  
+  .otros .col-md-6:last-child p:last-child {
+    margin-bottom: 0 !important;
+  }
+}

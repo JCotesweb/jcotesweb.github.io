@@ -9,14 +9,36 @@
     content="Portfolio de José Cotes Martínez, desarrollador front-end y diseñador web con experiencia en UI/UX, HTML, CSS, JavaScript y más.">
 
   <link href="https://fonts.googleapis.com/css2?family=Fira+Code&display=swap" rel="stylesheet">
-  <!-- Bootstrap CSS -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
   <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
+
   <div class="container">
+    <button class="hamburger-btn" id="hamburgerBtn">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+
+    <div class="menu-overlay" id="menuOverlay"></div>
+
+    <div class="mobile-menu" id="mobileMenu">
+      <div class="mobile-logo">
+        <img src="img/avatar.png" alt="José Cotes">
+      </div>
+      <nav class="mobile-nav">
+        <a href="#home" class="mobile-scroll-link">Inicio</a>
+        <a href="#sobre-mi" class="mobile-scroll-link">Sobre mí</a>
+        <a href="#portfolio" class="mobile-scroll-link">Portfolio</a>
+        <a href="#educacion" class="mobile-scroll-link">Educación</a>
+        <a href="#skills" class="mobile-scroll-link">Habilidades</a>
+        <a href="#contacto" class="mobile-scroll-link">Contacto</a>
+      </nav>
+    </div>
+
     <aside class="sidebar">
       <div class="logo">
         <img class="placeholder-img" src="img/avatar.png" alt="">
@@ -66,18 +88,16 @@
         <p>Puedes ponerte en contacto conmigo en <a class="link"
             href="mailto:jcotes.mar@gmail.com">jcotes.mar@gmail.com</a>
         </p>
-        <p>Ver mi expericia laboral con detalle en <a class="link"
-            href="https://www.linkedin.com/in/jose-cotes/" target="_blank">linkedin</a></p>
+        <p>Ver mi expericia laboral con detalle en <a class="link" href="https://www.linkedin.com/in/jose-cotes/"
+            target="_blank">linkedin</a></p>
       </section>
 
       <section id="portfolio">
         <h2>Portfolio</h2>
 
-        <!-- PRIMERA GALERÍA: PROYECTOS -->
         <h3>💡Proyectos</h3>
         <div class="portfolio-gallery">
           <div class="row">
-            <!-- Proyecto 1 -->
             <div class="col-xl-3 col-lg-6 col-md-6 col-sm-12">
               <div class="gallery-item" data-bs-toggle="modal" data-bs-target="#portfolioModal" data-project-index="0">
                 <div class="project-info">
@@ -95,7 +115,6 @@
               </div>
             </div>
 
-            <!-- Proyecto 2 -->
             <div class="col-xl-3 col-lg-6 col-md-6 col-sm-12">
               <div class="gallery-item" data-bs-toggle="modal" data-bs-target="#portfolioModal" data-project-index="1">
                 <div class="project-info">
@@ -114,7 +133,6 @@
               </div>
             </div>
 
-            <!-- Proyecto 3 -->
             <div class="col-xl-3 col-lg-6 col-md-6 col-sm-12">
               <div class="gallery-item" data-bs-toggle="modal" data-bs-target="#portfolioModal" data-project-index="2">
                 <div class="project-info">
@@ -133,19 +151,18 @@
               </div>
             </div>
 
-            <!-- Proyecto 4 -->
             <div class="col-xl-3 col-lg-6 col-md-6 col-sm-12">
               <div class="gallery-item" data-bs-toggle="modal" data-bs-target="#portfolioModal" data-project-index="3">
                 <div class="project-info">
                   <img src="img/cineradar.png" class="img-fluid" alt="Dashboard Analytics">
                   <div class="project-overlay">
                     <h4>CineRadar</h4>
-                    <p>Panel de control con visualización de datos.</p>
+                    <p>Web para descubrir películas que utiliza la API de TMDb.</p>
                     <div class="project-tech">
                       <span class="tech-tag">HTML</span>
-                      <span class="tech-tag">CSS3</span>
                       <span class="tech-tag">Javascript</span>
                       <span class="tech-tag">Tailwind</span>
+                      <span class="tech-tag">Responsive</span>
                     </div>
                   </div>
                 </div>
@@ -154,14 +171,11 @@
           </div>
         </div>
 
-        <!-- SEPARADOR -->
         <hr>
 
-        <!-- SEGUNDA GALERÍA: PÁGINAS WEB -->
         <h3>🌐Páginas Web</h3>
         <div class="portfolio-gallery">
           <div class="row">
-            <!-- Página Web 1 -->
             <div class="col-xl-3 col-lg-6 col-md-6 col-sm-12">
               <div class="gallery-item" data-bs-toggle="modal" data-bs-target="#websitesModal" data-website-index="0">
                 <div class="project-info">
@@ -179,7 +193,6 @@
               </div>
             </div>
 
-            <!-- Página Web 2 -->
             <div class="col-xl-3 col-lg-6 col-md-6 col-sm-12">
               <div class="gallery-item" data-bs-toggle="modal" data-bs-target="#websitesModal" data-website-index="1">
                 <div class="project-info">
@@ -197,7 +210,6 @@
               </div>
             </div>
 
-            <!-- Página Web 3 -->
             <div class="col-xl-3 col-lg-6 col-md-6 col-sm-12">
               <div class="gallery-item" data-bs-toggle="modal" data-bs-target="#websitesModal" data-website-index="2">
                 <div class="project-info">
@@ -216,19 +228,17 @@
               </div>
             </div>
 
-            <!-- Página Web 4 -->
             <div class="col-xl-3 col-lg-6 col-md-6 col-sm-12">
               <div class="gallery-item" data-bs-toggle="modal" data-bs-target="#websitesModal" data-website-index="3">
                 <div class="project-info">
                   <img src="img/bodega.png" class="img-fluid" alt="Agencia Creativa">
                   <div class="project-overlay">
                     <h4>Bodega Los Vélez</h4>
-                    <p>Landing page con animaciones y efectos</p>
+                    <p>Sitio web para una bodega artesanal de Almería.</p>
                     <div class="project-tech">
                       <span class="tech-tag">HTML5</span>
-                      <span class="tech-tag">Sass</span>
+                      <span class="tech-tag">CSS3</span>
                       <span class="tech-tag">JavaScript</span>
-                      <span class="tech-tag">Animations</span>
                     </div>
                   </div>
                 </div>
@@ -238,7 +248,6 @@
         </div>
       </section>
 
-      <!-- Modal para la galería de PROYECTOS -->
       <div class="modal fade" id="portfolioModal" tabindex="-1" aria-labelledby="portfolioModalLabel"
         aria-hidden="true">
         <div class="modal-dialog modal-xl modal-dialog-centered">
@@ -250,7 +259,6 @@
             <div class="modal-body text-center p-0">
               <div id="portfolioCarousel" class="carousel slide" data-bs-interval="false">
                 <div class="carousel-inner">
-                  <!-- Los elementos del carrusel se generarán dinámicamente -->
                 </div>
                 <button class="carousel-control-prev" type="button" data-bs-target="#portfolioCarousel"
                   data-bs-slide="prev">
@@ -268,7 +276,6 @@
         </div>
       </div>
 
-      <!-- Modal para la galería de PÁGINAS WEB -->
       <div class="modal fade" id="websitesModal" tabindex="-1" aria-labelledby="websitesModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-xl modal-dialog-centered">
           <div class="modal-content">
@@ -279,7 +286,6 @@
             <div class="modal-body text-center p-0">
               <div id="websitesCarousel" class="carousel slide" data-bs-interval="false">
                 <div class="carousel-inner">
-                  <!-- Los elementos del carrusel se generarán dinámicamente -->
                 </div>
                 <button class="carousel-control-prev" type="button" data-bs-target="#websitesCarousel"
                   data-bs-slide="prev">
@@ -300,11 +306,9 @@
       <section id="educacion">
         <h2>Educación</h2>
 
-        <!-- FORMACIÓN ACADÉMICA - 100% ANCHO -->
         <h3>🎓Formación Académica</h3>
         <div class="education-academic">
           <div class="accordion accordion-custom" id="academicAccordion">
-            <!-- Técnico Superior -->
             <div class="accordion-item">
               <h4 class="accordion-header" id="headingTecnico">
                 <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
@@ -320,12 +324,11 @@
                 <div class="accordion-body">
                   <p>Formación enfocada en la implementación y mantenimiento de sistemas de comunicación e informáticos,
                     incluyendo redes, hardware y software.</p>
-  
+
                 </div>
               </div>
             </div>
 
-            <!-- Desarrollo de Aplicaciones Web -->
             <div class="accordion-item">
               <h4 class="accordion-header" id="headingDAW">
                 <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
@@ -347,14 +350,11 @@
           </div>
         </div>
 
-        <!-- FORMACIÓN COMPLEMENTARIA - DOS COLUMNAS -->
         <h3>📚Formación Complementaria</h3>
         <div class="education-complementary">
           <div class="row">
-            <!-- COLUMNA IZQUIERDA -->
             <div class="col-md-6">
               <div class="accordion accordion-custom" id="complementaryAccordionLeft">
-                <!-- Máster de Diseño Web -->
                 <div class="accordion-item">
                   <h4 class="accordion-header" id="headingMaster">
                     <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
@@ -374,7 +374,7 @@
                   </div>
                 </div>
 
-                <!-- Sistemas Operativos -->
+
                 <div class="accordion-item">
                   <h4 class="accordion-header" id="headingSO">
                     <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
@@ -394,7 +394,7 @@
                   </div>
                 </div>
 
-                <!-- Gestión de Redes Sociales -->
+
                 <div class="accordion-item">
                   <h4 class="accordion-header" id="headingRRSS">
                     <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
@@ -414,7 +414,7 @@
                   </div>
                 </div>
 
-                <!-- Metodologías Agile -->
+
                 <div class="accordion-item">
                   <h4 class="accordion-header" id="headingAgile">
                     <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
@@ -434,7 +434,7 @@
                   </div>
                 </div>
 
-                <!-- Auditoría de Seguridad -->
+
                 <div class="accordion-item">
                   <h4 class="accordion-header" id="headingAuditoria">
                     <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
@@ -454,7 +454,7 @@
                   </div>
                 </div>
 
-                <!-- Publicación de Páginas Web -->
+
                 <div class="accordion-item">
                   <h4 class="accordion-header" id="headingPublicacion">
                     <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
@@ -474,15 +474,15 @@
                   </div>
                 </div>
 
-                <!-- Gestión de Bases de Datos -->
+
 
               </div>
             </div>
 
-            <!-- COLUMNA DERECHA -->
+
             <div class="col-md-6">
               <div class="accordion accordion-custom" id="complementaryAccordionRight">
-                <!-- Ciberseguridad -->
+
                 <div class="accordion-item">
                   <h4 class="accordion-header" id="headingCiber">
                     <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
@@ -502,7 +502,7 @@
                   </div>
                 </div>
 
-                <!-- Blockchain -->
+
                 <div class="accordion-item">
                   <h4 class="accordion-header" id="headingBlockchain">
                     <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
@@ -522,7 +522,7 @@
                   </div>
                 </div>
 
-                <!-- WordPress -->
+
                 <div class="accordion-item">
                   <h4 class="accordion-header" id="headingWordPress">
                     <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
@@ -542,7 +542,7 @@
                   </div>
                 </div>
 
-                <!-- SQL -->
+
                 <div class="accordion-item">
                   <h4 class="accordion-header" id="headingSQL">
                     <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
@@ -562,7 +562,7 @@
                   </div>
                 </div>
 
-                <!-- Photoshop -->
+
                 <div class="accordion-item">
                   <h4 class="accordion-header" id="headingPhotoshop">
                     <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
@@ -582,7 +582,7 @@
                   </div>
                 </div>
 
-                <!-- Fotografía Digital -->
+
                 <div class="accordion-item">
                   <h4 class="accordion-header" id="headingFotografia">
                     <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
@@ -607,12 +607,12 @@
         </div>
 
         <h3>✨En proceso de aprendizaje</h3>
-        <div class="proceso" >
-         <ul>
-          <li>Angular</li>
-          <li>NodeJs</li>
-          <li>Laravel</li>
-         </ul>
+        <div class="proceso">
+          <ul>
+            <li>Angular</li>
+            <li>NodeJs</li>
+            <li>Laravel</li>
+          </ul>
 
         </div>
       </section>
@@ -642,16 +642,26 @@
             <img src="img/iconos/tools/Photoshop.png" alt="Photoshop">
             <img src="img/iconos/tools/Ilustrator.png" alt="Illustrator">
             <img src="img/iconos/tools/wordpress_174881.png" alt="WordPress">
+            <img src="img/iconos/tools/figma.png" alt="Figma">
+            <img src="img/iconos/tools/vscode.png" alt="Visual Studio Code">
           </div>
         </div>
 
         <hr>
         <div class="otros">
           <h3>🧠Otros conocimientos</h3>
-          <p>Sistemas operativos Windows/Linux</p>
-          <p>Diseño web (UI/UX)</p>
-          <p>Ciberseguridad y auditoría</p>
-          <p>Metodologías Agile y Scrum</p>
+          <div class="row">
+            <div class="col-md-6">
+              <p>Sistemas operativos Windows/Linux</p>
+              <p>Diseño web (UI/UX)</p>
+              <p>Manejo de bases de datos</p>
+            </div>
+            <div class="col-md-6">
+              <p>Ciberseguridad y auditoría</p>
+              <p>Metodologías Agile y Scrum</p>
+              <p>Optimización de rendimiento web</p>
+            </div>
+          </div>
         </div>
       </section>
 
@@ -674,7 +684,7 @@
             </div>
             <div class="card-content">
               <h4>Envíame un mensaje por WhatsApp</h4>
-              <p><a href="https://wa.me/CODIGO_PAIS_NUMERO_TELEFONO" target="_blank">+34 660774368</a></p>
+              <p><a href="https://wa.me/34660774368" target="_blank">+34 660774368</a></p>
             </div>
           </div>
           <div class="card">
@@ -692,10 +702,12 @@
       <hr>
       <div class="footer">
         <h3>Proyecto desarrollado con:</h3>
-        <img src="img/iconos/tech/Html.png" alt="HTML">
-        <img src="img/iconos/tech/Css.png" alt="Css">
-        <img src="img/iconos/tech/Js.png" alt="JavaScript">
-        <img src="img/iconos/tech/bootstrap.png" alt="Bootstrap">
+        <div class="footer-images">
+          <img src="img/iconos/tech/Html.png" alt="HTML">
+          <img src="img/iconos/tech/Css.png" alt="Css">
+          <img src="img/iconos/tech/Js.png" alt="JavaScript">
+          <img src="img/iconos/tech/bootstrap.png" alt="Bootstrap">
+        </div>
         <p>&copy; 2025 José Cotes Martínez. Todos los derechos reservados.</p>
       </div>
 
@@ -703,12 +715,11 @@
   </div>
 
 
-  <!-- Bootstrap JavaScript -->
+
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
     crossorigin="anonymous"></script>
-  <!--JavaScript-->
-  
+  <script src="js/hamburger-menu.js"></script>
   <script src="js/portfolio-gallery.js"></script>
   <script src="js/scroll-sections.js"></script>
   <script src="js/scroll-center.js"></script>

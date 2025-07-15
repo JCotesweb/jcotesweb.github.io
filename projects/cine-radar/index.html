@@ -4,9 +4,19 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>CineRadar</title>
-<script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-
-
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            'neon-green': '#00FF41',
+            'bright-green': '#39FF14'
+          }
+        }
+      }
+    }
+  </script>
 </head>
 <body class="bg-[#0a0a0a] text-white font-sans">
 
@@ -15,43 +25,199 @@
     <p class="text-gray-400 mt-2">Descubre películas a tu medida</p>
   </header>
 
-  <main class="max-w-4xl mx-auto px-4 py-8">
+  <main class="max-w-6xl mx-auto px-4 py-8">
+    
+    <!-- Búsqueda por título -->
     <section class="mb-8">
-      <h2 class="text-2xl mb-4">🎯 Selecciona tus géneros favoritos:</h2>
-      <form id="genre-form" class="grid grid-cols-2 gap-4 text-lg">
-        <label class="flex items-center space-x-2">
-          <input type="checkbox" name="genre" value="28" class="accent-[#00FF41]">
-          <span>Acción</span>
-        </label>
-        <label class="flex items-center space-x-2">
-          <input type="checkbox" name="genre" value="35" class="accent-[#00FF41]">
-          <span>Comedia</span>
-        </label>
-        <label class="flex items-center space-x-2">
-          <input type="checkbox" name="genre" value="18" class="accent-[#00FF41]">
-          <span>Drama</span>
-        </label>
-        <label class="flex items-center space-x-2">
-          <input type="checkbox" name="genre" value="27" class="accent-[#00FF41]">
-          <span>Terror</span>
-        </label>
-        <label class="flex items-center space-x-2">
-          <input type="checkbox" name="genre" value="10749" class="accent-[#00FF41]">
-          <span>Romance</span>
-        </label>
-        <button type="submit" class="col-span-2 mt-4 bg-[#00FF41] text-black px-6 py-2 tracking-wide hover:bg-[#39FF14]">Obtener Recomendaciones</button>
-      </form>
+      <h2 class="text-2xl mb-4">🔍 Buscar por título:</h2>
+      <div class="flex gap-4">
+        <input 
+          type="text" 
+          id="search-input" 
+          placeholder="Escribe el título de una película..."
+          class="flex-1 px-4 py-2 bg-[#1e1e1e] border border-[#00FF41] text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[#00FF41]"
+        >
+        <button 
+          id="search-btn" 
+          class="px-6 py-2 bg-[#00FF41] text-black font-medium hover:bg-[#39FF14] transition-colors"
+        >
+          Buscar
+        </button>
+      </div>
     </section>
 
-    <section id="movies" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
-      <!-- Aquí se insertarán las películas -->
+    <!-- Filtros -->
+    <section class="mb-8">
+      <h2 class="text-2xl mb-4">🎯 Filtros de búsqueda:</h2>
+      
+      <!-- Géneros -->
+      <div class="mb-6">
+        <h3 class="text-xl mb-3 text-[#00FF41]">Géneros:</h3>
+        <form id="genre-form" class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3">
+          <label class="flex items-center space-x-2">
+            <input type="checkbox" name="genre" value="28" class="accent-[#00FF41]">
+            <span>Acción</span>
+          </label>
+          <label class="flex items-center space-x-2">
+            <input type="checkbox" name="genre" value="12" class="accent-[#00FF41]">
+            <span>Aventura</span>
+          </label>
+          <label class="flex items-center space-x-2">
+            <input type="checkbox" name="genre" value="16" class="accent-[#00FF41]">
+            <span>Animación</span>
+          </label>
+          <label class="flex items-center space-x-2">
+            <input type="checkbox" name="genre" value="35" class="accent-[#00FF41]">
+            <span>Comedia</span>
+          </label>
+          <label class="flex items-center space-x-2">
+            <input type="checkbox" name="genre" value="80" class="accent-[#00FF41]">
+            <span>Crimen</span>
+          </label>
+          <label class="flex items-center space-x-2">
+            <input type="checkbox" name="genre" value="99" class="accent-[#00FF41]">
+            <span>Documental</span>
+          </label>
+          <label class="flex items-center space-x-2">
+            <input type="checkbox" name="genre" value="18" class="accent-[#00FF41]">
+            <span>Drama</span>
+          </label>
+          <label class="flex items-center space-x-2">
+            <input type="checkbox" name="genre" value="10751" class="accent-[#00FF41]">
+            <span>Familia</span>
+          </label>
+          <label class="flex items-center space-x-2">
+            <input type="checkbox" name="genre" value="14" class="accent-[#00FF41]">
+            <span>Fantasía</span>
+          </label>
+          <label class="flex items-center space-x-2">
+            <input type="checkbox" name="genre" value="36" class="accent-[#00FF41]">
+            <span>Historia</span>
+          </label>
+          <label class="flex items-center space-x-2">
+            <input type="checkbox" name="genre" value="27" class="accent-[#00FF41]">
+            <span>Terror</span>
+          </label>
+          <label class="flex items-center space-x-2">
+            <input type="checkbox" name="genre" value="10402" class="accent-[#00FF41]">
+            <span>Música</span>
+          </label>
+          <label class="flex items-center space-x-2">
+            <input type="checkbox" name="genre" value="9648" class="accent-[#00FF41]">
+            <span>Misterio</span>
+          </label>
+          <label class="flex items-center space-x-2">
+            <input type="checkbox" name="genre" value="10749" class="accent-[#00FF41]">
+            <span>Romance</span>
+          </label>
+          <label class="flex items-center space-x-2">
+            <input type="checkbox" name="genre" value="878" class="accent-[#00FF41]">
+            <span>Ciencia Ficción</span>
+          </label>
+          <label class="flex items-center space-x-2">
+            <input type="checkbox" name="genre" value="10770" class="accent-[#00FF41]">
+            <span>Película de TV</span>
+          </label>
+          <label class="flex items-center space-x-2">
+            <input type="checkbox" name="genre" value="53" class="accent-[#00FF41]">
+            <span>Suspense</span>
+          </label>
+          <label class="flex items-center space-x-2">
+            <input type="checkbox" name="genre" value="10752" class="accent-[#00FF41]">
+            <span>Bélica</span>
+          </label>
+          <label class="flex items-center space-x-2">
+            <input type="checkbox" name="genre" value="37" class="accent-[#00FF41]">
+            <span>Western</span>
+          </label>
+        </form>
+      </div>
+
+      <!-- Filtros adicionales -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-6">
+        <div>
+          <label class="block text-[#00FF41] mb-2">Año de lanzamiento:</label>
+          <select id="year-filter" class="w-full px-3 py-2 bg-[#1e1e1e] border border-[#00FF41] text-white">
+            <option value="">Todos los años</option>
+            <option value="2024">2024</option>
+            <option value="2023">2023</option>
+            <option value="2022">2022</option>
+            <option value="2021">2021</option>
+            <option value="2020">2020</option>
+            <option value="2019">2019</option>
+            <option value="2018">2018</option>
+            <option value="2017">2017</option>
+            <option value="2016">2016</option>
+            <option value="2015">2015</option>
+            <option value="2010-2014">2010-2014</option>
+            <option value="2000-2009">2000-2009</option>
+            <option value="1990-1999">1990-1999</option>
+            <option value="1980-1989">1980-1989</option>
+            <option value="before-1980">Antes de 1980</option>
+          </select>
+        </div>
+
+        <div>
+          <label class="block text-[#00FF41] mb-2">Calificación mínima:</label>
+          <select id="rating-filter" class="w-full px-3 py-2 bg-[#1e1e1e] border border-[#00FF41] text-white">
+            <option value="">Cualquier calificación</option>
+            <option value="8">8.0+ (Excelente)</option>
+            <option value="7">7.0+ (Muy buena)</option>
+            <option value="6">6.0+ (Buena)</option>
+            <option value="5">5.0+ (Regular)</option>
+            <option value="4">4.0+ (Mala)</option>
+          </select>
+        </div>
+
+        <div>
+          <label class="block text-[#00FF41] mb-2">Ordenar por:</label>
+          <select id="sort-filter" class="w-full px-3 py-2 bg-[#1e1e1e] border border-[#00FF41] text-white">
+            <option value="popularity.desc">Popularidad (Mayor a menor)</option>
+            <option value="vote_average.desc">Calificación (Mayor a menor)</option>
+            <option value="release_date.desc">Fecha de lanzamiento (Más reciente)</option>
+            <option value="title.asc">Título (A-Z)</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="flex gap-4">
+        <button id="filter-btn" class="px-6 py-2 bg-[#00FF41] text-black font-medium hover:bg-[#39FF14] transition-colors">
+          Aplicar Filtros
+        </button>
+        <button id="clear-btn" class="px-6 py-2 bg-gray-600 text-white font-medium hover:bg-gray-700 transition-colors">
+          Limpiar Filtros
+        </button>
+      </div>
     </section>
+
+    <!-- Resultados -->
+    <section id="results-section" class="mb-8">
+      <div class="flex justify-between items-center mb-4">
+        <h2 class="text-2xl">🎬 Resultados:</h2>
+        <div id="results-count" class="text-gray-400"></div>
+      </div>
+      <div id="movies" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+        <!-- Aquí se insertarán las películas -->
+      </div>
+    </section>
+
+    <!-- Paginación -->
+    <section id="pagination" class="text-center">
+      <button id="prev-btn" class="px-4 py-2 bg-[#00FF41] text-black font-medium hover:bg-[#39FF14] transition-colors mr-4 disabled:opacity-50 disabled:cursor-not-allowed">
+        Anterior
+      </button>
+      <span id="page-info" class="text-[#00FF41] mx-4">Página 1</span>
+      <button id="next-btn" class="px-4 py-2 bg-[#00FF41] text-black font-medium hover:bg-[#39FF14] transition-colors ml-4 disabled:opacity-50 disabled:cursor-not-allowed">
+        Siguiente
+      </button>
+    </section>
+
   </main>
 
-  <footer class="text-center py-6 border-t border-[#00FF41] text-gray-500">
+  <footer class="text-center py-6 border-t border-[#00FF41] text-gray-500 mt-12">
     © 2025 CineRadar. Todos los derechos reservados.
   </footer>
 
-  <script src="app.js"></script>
+  <script src="js/app.js"></script>
 </body>
 </html>

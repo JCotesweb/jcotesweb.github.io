@@ -1,136 +1,88 @@
-/*PANTALLAS PEQUEÑAS*/
+/* ============================================
+   MEDIA QUERIES RESPONSIVE - REEMPLAZAR media.css
+   ============================================ */
 
-@media (max-width: 768px) {
-  .container {
-    flex-direction: column;
+/* ============================================
+   TABLET - 768px
+   ============================================ */
+@media (max-width: 767px) {
+  
+
+  .hamburger-btn {
+    display: block;
   }
-
+  
   .sidebar {
-    position: static;
-    width: 100%;
-    flex-direction: row;
-    justify-content: space-around;
-    height: auto;
-  }
-
-  .content {
-    margin-left: 0;
-    padding: 1rem;
-  }
-
-  .logo .placeholder-img {
-    width: 60px;
-    height: 60px;
-  }
-
-  .menu {
-    flex-direction: row;
-    gap: 0.5rem;
-  }
-
-  .menu a {
-    font-size: 0.9rem;
-    padding: 0.3rem;
-  }
-}
-
-/* MEDIA QUERIES PARA RESPONSIVE - GALERÍA 4 COLUMNAS */
-@media (max-width: 1400px) {
-  /* En pantallas menores a 1400px: 3 columnas */
-  .col-xl-3 {
-    flex: 0 0 33.333333%;
-    max-width: 33.333333%;
-  }
-}
-@media (max-width: 1200px) {
-  /* Ajustes para pantallas grandes */
-  .gallery-item img {
-    height: 200px;
-  }
-  
-  .project-overlay h4 {
-    font-size: 1.05rem;
-  }
-  
-  .project-overlay p {
-    font-size: 0.9rem;
-  }
-  
-  .tech-tag {
-    font-size: 0.7rem;
-    padding: 0.2rem 0.45rem;
-  }
-}
-
-@media (max-width: 992px) {
-  /* En pantallas menores a 992px: 2 columnas */
-  .gallery-item img {
-    height: 200px;
-  }
-  
-  .project-overlay h4 {
-    font-size: 1.1rem;
-  }
-  
-  .project-overlay p {
-    font-size: 0.9rem;
-  }
-  
-  .tech-tag {
-    font-size: 0.7rem;
-    padding: 0.2rem 0.5rem;
-  }
-}
-
-@media (max-width: 768px) {
-  /* En pantallas menores a 768px: 1 columna */
-  .sidebar {
-    transform: translateX(-100%);
-    transition: transform 0.3s ease;
-  }
-  
-  .sidebar.active {
-    transform: translateX(0);
+    display: none;
   }
   
   .content {
     margin-left: 0;
     width: 100%;
+    padding: 1rem 3%;
   }
   
-  .gallery-item img {
-    height: 250px;
+
+  #home h1 {
+    font-size: 3rem;
   }
   
-  .project-overlay h4 {
-    font-size: 1.2rem;
-  }
-  
-  .project-overlay p {
-    font-size: 0.95rem;
-  }
-  
-  .tech-tag {
-    font-size: 0.75rem;
-    padding: 0.25rem 0.6rem;
+  #home h2 {
+    font-size: 2.2rem;
   }
   
   .social {
     width: 100%;
-    max-width: 400px;
+    max-width: 350px;
   }
   
-  h1 {
-    font-size: 2.5rem;
+  .social img {
+    width: 45px;
   }
   
-  h2 {
-    font-size: 2rem;
+  .btn-base {
+    width: 250px;
   }
   
-  /* Responsive para acordeón */
+
+  #sobre-mi h2 {
+    font-size: 2.2rem;
+    margin: 1rem 0;
+  }
+  
+  #sobre-mi p {
+    margin: 0.7rem 0;
+  }
+  
+  #sobre-mi h3 {
+    font-size: 1.3rem;
+    margin: 0.7rem 0;
+  }
+  
+
+  .portfolio-gallery .col-xl-3 {
+    flex: 0 0 50%;
+    max-width: 50%;
+  }
+  
+  .gallery-item img {
+    height: 180px;
+  }
+  
+  .project-overlay {
+    position: static;
+    transform: translateY(0);
+    background: linear-gradient(135deg, rgba(37, 30, 71, 0.9), rgba(46, 83, 176, 0.8));
+    padding: 1rem;
+  }
+  
+
+  #educacion h2 {
+    font-size: 2.2rem;
+  }
+  
   .accordion-custom .accordion-button {
-    padding: 0.75rem 1rem;
+    padding: 0.6rem 1rem;
   }
   
   .accordion-title strong {
@@ -145,48 +97,247 @@
     padding: 1rem;
   }
   
+  .proceso ul {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .proceso li {
+    width: 100%;
+    margin: 0.5rem 0;
+  }
+  
+
+  #skills h2 {
+    font-size: 2.2rem;
+  }
+  
+  .icons img {
+    width: 50px;
+  }
+  
+  .icons {
+    gap: 1rem;
+  }
+  
+
+  .contacto-cards {
+    gap: 1.5rem;
+  }
+  
+  .card {
+    width: 250px;
+    height: 250px;
+  }
+  
+  .card-image img {
+    width: 65px;
+    height: 65px;
+  }
+}
+
+/* ============================================
+   MÓVIL - 480px
+   ============================================ */
+@media (max-width: 479px) {
+  
+  .content {
+    padding: 1rem 2%;
+  }
+  
+
+  #home h1 {
+    font-size: 2.2rem;
+  }
+  
+  #home h2 {
+    font-size: 1.8rem;
+  }
+  
+  .social {
+    width: 100%;
+    max-width: 300px;
+    justify-content: space-around;
+  }
+  
+  .social img {
+    width: 40px;
+  }
+  
+  .btn-base {
+    width: 100%;
+    max-width: 100%;
+  }
+  
+
+  #sobre-mi h2 {
+    font-size: 1.8rem;
+  }
+  
+  #sobre-mi p {
+    margin: 0.5rem 0;
+    font-size: 0.9rem;
+  }
+  
+  #sobre-mi h3 {
+    font-size: 1.1rem;
+  }
+  
+
+  .portfolio-gallery .col-xl-3 {
+    flex: 0 0 100%;
+    max-width: 100%;
+  }
+  
+  .gallery-item img {
+    height: 200px;
+  }
+  
+  .project-overlay h4 {
+    font-size: 1rem;
+  }
+  
+  .project-overlay p {
+    font-size: 0.85rem;
+  }
+  
+  .tech-tag {
+    font-size: 0.7rem;
+    padding: 0.2rem 0.4rem;
+  }
+  
+
+  #educacion h2 {
+    font-size: 1.8rem;
+  }
+  
+  .education-complementary .col-md-6 {
+    margin-bottom: 1.5rem;
+  }
+  
+  .accordion-custom .accordion-button {
+    padding: 0.5rem 0.8rem;
+  }
+  
+  .accordion-title strong {
+    font-size: 0.85rem;
+  }
+  
+  .institution-year {
+    font-size: 0.75rem;
+  }
+  
+  .accordion-custom .accordion-body {
+    padding: 0.8rem;
+  }
+  
   .accordion-custom .accordion-body p {
     font-size: 0.85rem;
   }
   
-  /* Responsive para las columnas de educación */
-  .education-complementary .col-md-6 {
-    margin-bottom: 1rem;
+
+  #skills h2 {
+    font-size: 1.8rem;
   }
   
-  .education-complementary .col-md-6:last-child {
-    margin-bottom: 0;
+  .icons {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0.8rem;
+    justify-items: center;
   }
-}
-
-/* FORZAR 4 COLUMNAS EN PANTALLAS MUY GRANDES */
-@media (min-width: 1200px) {
-  .portfolio-gallery .col-xl-3 {
-    flex: 0 0 25%;
-    max-width: 25%;
+  
+  .icons img {
+    width: 45px;
   }
-}
+  
 
-/* Ajuste de altura para que las columnas se vean equilibradas */
-@media (min-width: 769px) {
-  .education-complementary .col-md-6 {
-    display: flex;
+  .contacto-cards {
     flex-direction: column;
+    align-items: center;
+    gap: 1rem;
   }
   
-  .education-complementary .accordion {
-    flex: 1;
+  .card {
+    width: 100%;
+    max-width: 280px;
+    height: 220px;
+  }
+  
+  .card-image img {
+    width: 55px;
+    height: 55px;
+  }
+  
+  .card-content h4 {
+    font-size: 1rem;
+  }
+  
+  .card-content p {
+    font-size: 0.85rem;
+  }
+  
+
+  h3 {
+    font-size: 1.1rem;
+  }
+  
+  .footer h3 {
+    font-size: 1.1rem;
+    text-align: center;
+  }
+  
+  .footer {
+    text-align: center;
+    justify-content: center;
+  }
+  
+  .footer img {
+    width: 35px;
+    height: 35px;
+  }
+  
+  .footer p {
+    text-align: center;
+    font-size: 0.8rem;
   }
 }
 
-/* Animación suave para el acordeón */
-.accordion-custom .accordion-collapse {
-  transition: all 0.3s ease;
+/* ============================================
+   AJUSTES PARA MODALES EN RESPONSIVE
+   ============================================ */
+@media (max-width: 767px) {
+  .modal-xl {
+    max-width: 95vw;
+  }
+  
+  .carousel-item img {
+    max-height: 60vh;
+  }
+  
+  .carousel-caption {
+    padding: 1rem;
+    bottom: 10px;
+    left: 10px;
+    right: 10px;
+  }
 }
 
-/* Hover effect para items del acordeón */
-.accordion-custom .accordion-item:hover {
-  transform: translateY(-1px);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-  transition: all 0.3s ease;
+@media (max-width: 479px) {
+  .modal-xl {
+    max-width: 98vw;
+    margin: 0.5rem;
+  }
+  
+  .carousel-item img {
+    max-height: 50vh;
+  }
+  
+  .carousel-caption h5 {
+    font-size: 1rem;
+  }
+  
+  .carousel-caption p {
+    font-size: 0.8rem;
+  }
 }

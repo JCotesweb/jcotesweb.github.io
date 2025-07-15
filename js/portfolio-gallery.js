@@ -1,6 +1,4 @@
 
-
-// Array de datos de los PROYECTOS
 const projectsData = [
   {
     src: 'img/tabla-periodica.png',
@@ -40,7 +38,6 @@ const projectsData = [
   }
 ];
 
-// Array de datos de las PÁGINAS WEB
 const websitesData = [
   {
     src: 'img/Edustudio.png',
@@ -80,12 +77,9 @@ const websitesData = [
   }
 ];
 
-// Función para generar el contenido del carrusel
 function generateCarouselContent(dataArray, carouselInner, selectedIndex) {
-  // Limpiar el contenido anterior del carrusel
   carouselInner.innerHTML = '';
 
-  // Generar los ítems del carrusel
   dataArray.forEach((item, index) => {
     const carouselItem = document.createElement('div');
     carouselItem.classList.add('carousel-item');
@@ -122,9 +116,7 @@ function generateCarouselContent(dataArray, carouselInner, selectedIndex) {
   });
 }
 
-// Inicialización cuando el DOM esté listo
 document.addEventListener('DOMContentLoaded', function() {
-  // MODAL Y CARRUSEL DE PROYECTOS
   const portfolioModal = document.getElementById('portfolioModal');
   const portfolioCarouselInner = portfolioModal.querySelector('.carousel-inner');
   const portfolioCarousel = new bootstrap.Carousel(document.getElementById('portfolioCarousel'), {
@@ -132,7 +124,6 @@ document.addEventListener('DOMContentLoaded', function() {
     wrap: true
   });
 
-  // MODAL Y CARRUSEL DE PÁGINAS WEB
   const websitesModal = document.getElementById('websitesModal');
   const websitesCarouselInner = websitesModal.querySelector('.carousel-inner');
   const websitesCarousel = new bootstrap.Carousel(document.getElementById('websitesCarousel'), {
@@ -140,7 +131,6 @@ document.addEventListener('DOMContentLoaded', function() {
     wrap: true
   });
 
-  // Evento para el modal de PROYECTOS
   portfolioModal.addEventListener('show.bs.modal', function (event) {
     const opener = event.relatedTarget;
     const projectIndex = opener.getAttribute('data-project-index');
@@ -149,7 +139,6 @@ document.addEventListener('DOMContentLoaded', function() {
     portfolioCarousel.to(parseInt(projectIndex));
   });
 
-  // Evento para el modal de PÁGINAS WEB
   websitesModal.addEventListener('show.bs.modal', function (event) {
     const opener = event.relatedTarget;
     const websiteIndex = opener.getAttribute('data-website-index');
@@ -158,7 +147,6 @@ document.addEventListener('DOMContentLoaded', function() {
     websitesCarousel.to(parseInt(websiteIndex));
   });
 
-  // Reiniciar carruseles cuando se cierran los modales
   portfolioModal.addEventListener('hidden.bs.modal', function () {
     portfolioCarousel.to(0);
   });
@@ -167,7 +155,6 @@ document.addEventListener('DOMContentLoaded', function() {
     websitesCarousel.to(0);
   });
 
-  // Funcionalidad de navegación suave (mantener la funcionalidad original)
   const sections = document.querySelectorAll('main section');
   const navLinks = document.querySelectorAll('.menu a');
 
@@ -191,7 +178,6 @@ document.addEventListener('DOMContentLoaded', function() {
 
   sections.forEach(section => observer.observe(section));
 
-  // Scroll suave para los enlaces de navegación
   document.querySelectorAll('.scroll-link').forEach(link => {
     link.addEventListener('click', function(e) {
       e.preventDefault();

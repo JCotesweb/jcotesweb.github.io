@@ -1,12 +1,15 @@
-// Este script centra cada sección al hacer scroll con la rueda o flechas del teclado
 document.addEventListener('DOMContentLoaded', () => {
-    // Selecciona todas las secciones principales del portfolio
+    const isMobile = window.innerWidth <= 768 || /Android|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+    
+    if (isMobile) {
+        return;
+    }
+
     const sections = Array.from(document.querySelectorAll('section'));
     let currentSectionIndex = 0;
     let isScrolling = false;
-    const scrollThrottleTime = 1000; // 1 segundo entre scrolls
+    const scrollThrottleTime = 1000;
 
-    // Función para centrar una sección específica
     function scrollToSection(index) {
         if (index < 0 || index >= sections.length) return;
 
@@ -17,7 +20,6 @@ document.addEventListener('DOMContentLoaded', () => {
         const sectionHeight = targetSection.offsetHeight;
         const viewportHeight = window.innerHeight;
 
-        // Calcula la posición para centrar la sección
         const scrollPosition = targetSection.offsetTop - (viewportHeight / 2) + (sectionHeight / 2);
 
         window.scrollTo({
@@ -30,10 +32,8 @@ document.addEventListener('DOMContentLoaded', () => {
         }, scrollThrottleTime);
     }
 
-    // Centra la primera sección al cargar
     scrollToSection(0);
 
-    // Scroll con la rueda del ratón
     window.addEventListener('wheel', (event) => {
         if (isScrolling) return;
 
@@ -44,7 +44,6 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }, { passive: false });
 
-    // Scroll con flechas del teclado
     window.addEventListener('keydown', (event) => {
         if (isScrolling) return;
 
@@ -57,7 +56,6 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    // Recentrar al redimensionar la ventana
     window.addEventListener('resize', () => {
         scrollToSection(currentSectionIndex);
     });
