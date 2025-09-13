@@ -1,0 +1,439 @@
+/* Estilos generales */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Comic Sans MS', cursive, Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background-image: url(../img/cuadricula.jpg);
+    background-position: left;
+    color: #333333;
+    animation: subtleFloat 6s ease-in-out infinite;
+}
+
+@keyframes subtleFloat {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-2px); }
+}
+
+/* Header estilo Post-it */
+header {
+    background: linear-gradient(135deg, #FFF78C 0%, #FFEB3B 100%);
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.15);
+    margin: 20px;
+    border-radius: 8px;
+    position: relative;
+    transform: rotate(-1deg);
+    transition: transform 0.3s ease;
+}
+
+header:hover {
+    transform: rotate(0deg) scale(1.02);
+}
+
+header::before {
+    content: "📌";
+    position: absolute;
+    top: -10px;
+    right: 20px;
+    font-size: 24px;
+    transform: rotate(45deg);
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.logo h1 {
+    font-size: 28px;
+    color: #2E7D32;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+}
+
+.logo span {
+    font-size: 24px;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 25px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #555555;
+    font-weight: bold;
+    font-size: 16px;
+    padding: 8px 16px;
+    border-radius: 20px;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+nav ul li a:hover {
+    background-color: rgba(255, 255, 255, 0.7);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+nav ul li a.active {
+    background-color: #4CAF50;
+    color: white;
+}
+
+/* Contenido principal */
+.contenido-principal {
+    display: flex;
+    flex-grow: 1;
+    padding: 20px;
+    gap: 20px;
+}
+
+/* Main estilo Post-it grande */
+main {
+    background: linear-gradient(135deg, #B1E5F8 0%, #81D4FA 100%);
+    flex: 3;
+    padding: 25px;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.15);
+    border-radius: 8px;
+    position: relative;
+    transform: rotate(0.5deg);
+    transition: transform 0.3s ease;
+}
+
+main:hover {
+    transform: rotate(0deg);
+}
+
+main::before {
+    content: "📎";
+    position: absolute;
+    top: -8px;
+    left: 20px;
+    font-size: 20px;
+    transform: rotate(-45deg);
+}
+
+/* Secciones internas */
+.post-it-section {
+    background: linear-gradient(135deg, #FFC2E2 0%, #F8BBD9 100%);
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.1);
+    transform: rotate(-0.3deg);
+    transition: all 0.3s ease;
+    position: relative;
+    margin-bottom: 15px;
+}
+
+.post-it-section:nth-child(even) {
+    background: linear-gradient(135deg, #C8E6C9 0%, #A5D6A7 100%);
+    transform: rotate(0.3deg);
+}
+
+.post-it-section:hover {
+    transform: rotate(0deg) scale(1.02);
+    box-shadow: 4px 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.post-it-section h2 {
+    color: #2E7D32;
+    margin-bottom: 15px;
+    font-size: 24px;
+}
+
+.post-it-section h3 {
+    color: #1976D2;
+    margin-bottom: 10px;
+}
+
+/* Artículos del blog */
+.articulo {
+    background: linear-gradient(135deg, #FFF9C4 0%, #F0F4C3 100%);
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+    transform: rotate(-0.2deg);
+    transition: all 0.3s ease;
+}
+
+.articulo:hover {
+    transform: rotate(0deg) scale(1.01);
+}
+
+.articulo h3 {
+    color: #E65100;
+    margin-bottom: 10px;
+}
+
+.articulo .fecha {
+    color: #666;
+    font-size: 14px;
+    margin-bottom: 10px;
+}
+
+.articulo .tags {
+    margin-top: 10px;
+}
+
+.tag {
+    background-color: #81C784;
+    color: white;
+    padding: 4px 8px;
+    border-radius: 12px;
+    font-size: 12px;
+    margin-right: 5px;
+    display: inline-block;
+}
+
+/* Galería mejorada */
+.galeria {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 15px;
+    margin-top: 15px;
+}
+
+.galeria-item {
+    position: relative;
+    overflow: hidden;
+    border-radius: 8px;
+    box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.galeria-item:hover {
+    transform: scale(1.05) rotate(2deg);
+}
+
+.galeria-item img {
+    width: 100%;
+    height: 120px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+/* Aside estilo Post-it */
+aside {
+    width: 300px;
+    background: linear-gradient(135deg, #FFD6A5 0%, #FFCC80 100%);
+    padding: 25px;
+    box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.15);
+    border-radius: 8px;
+    position: relative;
+    transform: rotate(1.5deg);
+    transition: transform 0.3s ease;
+}
+
+aside:hover {
+    transform: rotate(0deg);
+}
+
+aside::before {
+    content: "📍";
+    position: absolute;
+    top: -8px;
+    right: 20px;
+    font-size: 20px;
+}
+
+.widget {
+    background: rgba(255, 255, 255, 0.3);
+    padding: 20px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.widget h3 {
+    color: #2E7D32;
+    margin-bottom: 15px;
+}
+
+/* Formulario mejorado */
+.widget form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.widget form label {
+    color: #555555;
+    font-weight: bold;
+}
+
+.widget form input[type="text"],
+.widget form input[type="email"],
+.widget form input[type="password"],
+.widget form textarea {
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    padding: 10px;
+    font-size: 14px;
+    transition: border-color 0.3s ease;
+}
+
+.widget form input:focus,
+.widget form textarea:focus {
+    outline: none;
+    border-color: #4CAF50;
+    box-shadow: 0 0 5px rgba(76, 175, 80, 0.3);
+}
+
+.widget form button {
+    background: linear-gradient(135deg, #4CAF50 0%, #45a049 100%);
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.widget form button:hover {
+    transform: translateY(-2px);
+    box-shadow: 2px 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Lista de categorías */
+.categorias ul {
+    list-style: none;
+}
+
+.categorias ul li {
+    margin-bottom: 8px;
+}
+
+.categorias ul li a {
+    text-decoration: none;
+    color: #555;
+    padding: 5px 10px;
+    border-radius: 15px;
+    display: block;
+    transition: all 0.3s ease;
+}
+
+.categorias ul li a:hover {
+    background-color: rgba(255, 255, 255, 0.5);
+    transform: translateX(5px);
+}
+
+/* Footer estilo Post-it */
+footer {
+    background: linear-gradient(135deg, #C6F5A3 0%, #AED581 100%);
+    padding: 25px;
+    text-align: center;
+    color: #2E7D32;
+    box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.15);
+    margin: 20px;
+    border-radius: 8px;
+    position: relative;
+    transform: rotate(-0.5deg);
+    transition: transform 0.3s ease;
+}
+
+footer:hover {
+    transform: rotate(0deg);
+}
+
+footer::before {
+    content: "🌟";
+    position: absolute;
+    top: -8px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 20px;
+}
+
+.redes-sociales {
+    margin-top: 15px;
+}
+
+.redes-sociales a {
+    color: #2E7D32;
+    text-decoration: none;
+    margin: 0 15px;
+    font-size: 18px;
+    transition: all 0.3s ease;
+}
+
+.redes-sociales a:hover {
+    transform: scale(1.2);
+    color: #1976D2;
+}
+
+/* Secciones de contenido ocultas por defecto */
+.seccion-contenido {
+    display: none;
+}
+
+.seccion-contenido:first-child {
+    display: block;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .contenido-principal {
+        flex-direction: column;
+    }
+
+    aside {
+        width: 100%;
+        transform: rotate(-0.5deg);
+    }
+
+    nav ul {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    header {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .galeria {
+        grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    }
+
+    /* Contacto responsive */
+    #contacto .post-it-section > div {
+        display: block !important;
+        grid-template-columns: none !important;
+    }
+
+    #contacto .post-it-section > div > div:first-child {
+        margin-bottom: 20px;
+    }
+}
+
+/* Animaciones adicionales */
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+    40% { transform: translateY(-10px); }
+    60% { transform: translateY(-5px); }
+}
+
+.bounce-on-hover:hover {
+    animation: bounce 0.6s;
+}
